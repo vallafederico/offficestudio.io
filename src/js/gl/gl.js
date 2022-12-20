@@ -34,7 +34,7 @@ export default class {
     this.resize();
     this.initEvents();
 
-    this.render();
+    // this.render();
   }
 
   render(scroll = 0) {
