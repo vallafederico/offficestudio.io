@@ -1,0 +1,51 @@
+/* ------------------------------  Variables */
+:root {
+  /* Colors */
+  --color-black: #111111;
+  --color-white: #fefefe;
+  /* Spaces */
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 2rem;
+}
+
+body {
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: "Sohne-web";
+  font-size: 14px;
+}
+
+/* ------------------------------  Webgl */
+[data-gl="c"] {
+  position: fixed;
+  box-sizing: border-box;
+
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+
+  z-index: -10;
+  pointer-events: none;
+  /* background: blue; */
+}
+
+/* ------------------------------  Layout */
+main {
+  min-height: 100vh;
+}
+
+.Section {
+  /* border: 1px solid blue; */
+
+  padding-top: var(--space-l);
+  padding-bottom: var(--space-l);
+}
+
+.c {
+  margin-left: var(--space-l);
+  margin-right: var(--space-l);
+}
+
+/* ------------------------------  ... */
