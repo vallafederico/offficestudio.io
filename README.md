@@ -1,15 +1,13 @@
 # Offfice Studio
 
-### 1. build HTML + CSS
+1. Build html & css
 
-- [ ]
+2. build basic js layer
 
-### 2. base animations
-### 3. webgl moving things
-### 4. more animation
-### 5. page transition
-### 6. launch
+3. add webgl
 
-## Todo
+4. animations!
 
-- [ ]
+5. page transitions
+
+6. more animations
