@@ -1,9 +1,52 @@
-/* ------------------------------  Fonts */
 @font-face {
-  font-family: "Sohne-web";
-  src: url("/fonts/Sohne-Buch-webh.woff2") format("woff2"),
-    url("/fonts/Sohne-Buch-webh.woff") format("woff");
+  font-family: "ak";
+  src: url("/fonts/ak-Regular.woff2") format("woff2"),
+    url("/fonts/ak-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
+  font-family: "ak";
+  src: url("/fonts/ak-Italic.woff2") format("woff2"),
+    url("/fonts/ak-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ak";
+  src: url("/fonts/ak-Bold.woff2") format("woff2"),
+    url("/fonts/ak-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ak";
+  src: url("/fonts/ak-BoldItalic.woff2") format("woff2"),
+    url("/fonts/ak-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "gs";
+  src: url("/fonts/gs-Light.woff2") format("woff2"),
+    url("/fonts/gs-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-ak {
+  font-family: "ak";
+}
+
+.font-gs {
+  font-family: "gs";
 }

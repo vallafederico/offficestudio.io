@@ -1,9 +1,8 @@
-import "./style/main.css";
-
 import Dom from "./modules/dom";
 import Viewport from "./modules/viewport";
 import Scroll from "./modules/scroll";
 import Pages from "./modules/pages";
+import Gl from "./gl/gl.js";
 
 class App {
   constructor() {
@@ -19,6 +18,8 @@ class App {
     this.scroll = new Scroll();
     this.pages = new Pages();
     this.dom = new Dom();
+
+    this.gl = new Gl();
 
     this.initEvents();
     this.render();

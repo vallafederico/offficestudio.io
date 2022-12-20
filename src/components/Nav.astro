@@ -1,0 +1,27 @@
+---
+const links = [
+  {
+    label: "CUSTOM WORK",
+    href: "",
+  },
+  {
+    label: "SHOP ARCHIVE",
+    href: "",
+  },
+];
+---
+
+<nav class="c font-bold fixed top-[var(--space-l)] right-0 text-xs">
+  {
+    links.map((link) => (
+      <a
+        class="block mb-[var(--space-s)]"
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {link.label}
+      </a>
+    ))
+  }
+</nav>

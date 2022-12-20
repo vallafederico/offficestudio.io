@@ -1,0 +1,38 @@
+---
+import Section from "../Section.astro";
+
+const items = await Astro.glob("../../pages/work/*.md"); // returns an array of posts that live at ./src/pages/post/*.md
+---
+
+<Section className="mb-[50vh]">
+  <div class="c">
+    <div class="flex justify-center mb-4">
+      <h2 class="font-bold italic text-lg">Archive</h2>
+    </div>
+    <ul>
+      <!--  -->
+      {
+        items.map((item) => {
+          const { name, type, category, year, avail } = item.frontmatter;
+          return (
+            <li class=" flex flex-col content-center mb-4">
+              <div class="flex justify-center">
+                <h2 class="font-gs text-[6vw] leading-[.9em]">
+                  {name} <span class="font-ak text-sm">{year}</span>
+                </h2>
+              </div>
+              <div class="flex justify-center mt-4 mb-8">
+                <div class="flex w-[50vw] justify-between">
+                  <p>{avail}</p>
+                  <a href={item.url}>PROJECT DETAILS</a>
+                  <p>{type}</p>
+                  <p>{category}</p>
+                </div>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</Section>

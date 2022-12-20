@@ -1,7 +1,10 @@
 ---
 import "../style/type.css";
 import "../style/main.css";
+
 const { title } = Astro.props;
+
+import Nav from "../components/Nav.astro";
 ---
 
 <!DOCTYPE html>
@@ -15,6 +18,7 @@ const { title } = Astro.props;
   </head>
 
   <body>
+    <Nav />
     <div data-taxi>
       <main data-taxi-view class="Main">
         <slot />
@@ -22,8 +26,8 @@ const { title } = Astro.props;
     </div>
 
     <!-- Webgl -->
-    <canvas data-gl="c"></canvas>
-    <!-- <div data-gl="c"></div> -->
+    <!-- <canvas data-gl="c"></canvas> -->
+    <div data-gl="c"></div>
 
     <script>
       import "../js/app.js";

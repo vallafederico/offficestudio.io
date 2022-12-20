@@ -1,0 +1,66 @@
+---
+import "../style/type.css";
+import "../style/main.css";
+
+const { title, frontmatter } = Astro.props;
+const { size, name } = frontmatter;
+
+// console.log(Astro.props, size);
+
+import Nav from "../components/Nav.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <Nav />
+
+    <!--  -->
+    <div data-taxi>
+      <main
+        data-taxi-view
+        class="Main flex flex-col justify-between py-8 text-xs"
+      >
+        <!-- I -->
+        <div class="c flex">
+          <li class="w-[50vw] pr-[10%] flex justify-end">
+            {
+              size.map((unit) => {
+                return <ul>{unit}</ul>;
+              })
+            }
+          </li>
+          <div class="w-[30ch] uppercase"><slot /></div>
+        </div>
+        <!-- II -->
+        <div class="c flex justify-between">
+          <a href="/">BACK HOME</a>
+          <p>DOWNLOAD SPEC SHEET</p>
+        </div>
+        <!-- III -->
+        <div class="c flex justify-between items-end">
+          <h1 class="font-gs uppercase text-[5vw] max-w-[15ch] leading-[.8em]">
+            {name} BUT A LONGER NAME
+          </h1>
+          <p>REQUEST PURCHASE</p>
+        </div>
+      </main>
+    </div>
+
+    <!--  -->
+    <!-- Webgl -->
+    <div data-gl="c"></div>
+
+    <script>
+      import "../js/app.js";
+    </script>
+  </body>
+</html>

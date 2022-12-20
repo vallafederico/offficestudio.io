@@ -2,16 +2,23 @@ import { Renderer, Orbit } from "ogl";
 import Cam from "./_camera.js";
 import Scene from "./_scene.js";
 
+// vec3(0.06666666666666667, 0.06666666666666667, 0.06666666666666667);
+
 export default class {
   constructor() {
-    this.wrapper = document.getElementById("c");
+    this.wrapper = document.querySelector("[data-gl='c']");
     this.vp = {
       dpr: Math.min(window.devicePixelRatio, 2),
     };
 
-    this.renderer = new Renderer({ dpr: 2 });
+    this.renderer = new Renderer({ dpr: 2, alpha: true });
     this.gl = this.renderer.gl;
-    this.gl.clearColor(0, 0, 0, 1);
+    this.gl.clearColor(
+      0.06666666666666667,
+      0.06666666666666667,
+      0.06666666666666667,
+      0
+    );
 
     this.wrapper.appendChild(this.gl.canvas);
 
@@ -32,6 +39,7 @@ export default class {
 
   render(scroll = 0) {
     this.time += 0.5;
+    // console.log(this.time);
 
     if (this.controls) this.controls.update();
     if (this.scene) this.scene.render(this.time);

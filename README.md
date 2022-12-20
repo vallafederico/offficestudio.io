@@ -1,5 +1,7 @@
 # Offfice Studio
 
+## The Plan
+
 1. Build html & css
 
 2. build basic js layer
