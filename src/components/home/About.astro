@@ -12,25 +12,27 @@ const CONT = [
   },
 ];
 
-console.log(CONT);
+// console.log(CONT);
 ---
 
 <Section className="mb-[30vh]">
   <div class="c">
-    <h3 class="uppercase text-[4vw] leading-[.9em] max-w-[30ch]">
+    <h3
+      class="uppercase md:text-[4vw] text-[6vw] leading-[.9em] md:max-w-[30ch]"
+    >
       We’re an Italian, Spanish and swiss multidisciplinary design studio
       focused on interior design, installations, digital imagery and meta-space
       research.
     </h3>
-    <ul class="text-xs mt-8">
+    <ul class="text-xs mt-8 md:ml-4">
       {
         CONT.map((item) => {
           return (
-            <li class="flex my-4 uppercase">
-              <p class="mr-8 font-bold">EMAIL</p>
+            <li class="block md:flex my-2  uppercase">
+              <p class="mr-8 font-bold w-[10vw]">{item.title}</p>
               <p>
-                {item.title} <span class="font-gs">(AT)</span>{" "}
-                OFFICEFORFUTUREFURNISHING <span class="font-gs">(DOT)</span> com
+                {item.title} <span class="font-gs">(AT)</span> OFFICESTUD{" "}
+                <span class="font-gs">(DOT)</span> IO
               </p>
             </li>
           );

@@ -2,21 +2,28 @@
 import Section from "../Section.astro";
 ---
 
-<Section className="h-[85vh]">
+<Section className="h-[85vh] mt-[20vh] lg:mt-0">
   <div class="c text-[15vw] uppercase leading-[.9em]">
     <div class="flex">
       <p>Office For</p>
     </div>
     <div class="flex items-center justify-between">
       <p>Future</p>
-      <p class="text-xs max-w-[40ch]">
+      <p class="text-xs max-w-[40ch] lg:block hidden">
         <i> FUTURE</i> LIVING <b> DESIGN</b> RESEARCH STUDIO INSTALLATIONS, COMMERCIAL
         AND PRIVATE SPACES.
       </p>
-      <p class="text-xs max-w-[40ch]">IT / US / ARG</p>
+      <p class="text-xs max-w-[40ch] lg:block hidden">IT / US / AG</p>
     </div>
     <div class="flex">
       <p>Furnishing.</p>
+    </div>
+    <div class="lg:hidden flex justify-between items-end my-8">
+      <p class="text-xs max-w-[30ch]">
+        <i> FUTURE</i> LIVING <b> DESIGN</b> RESEARCH STUDIO INSTALLATIONS, COMMERCIAL
+        AND PRIVATE SPACES.
+      </p>
+      <p class="text-xs max-w-[40ch]">IT / US / AG</p>
     </div>
   </div>
 </Section>

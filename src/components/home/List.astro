@@ -17,15 +17,15 @@ const items = await Astro.glob("../../pages/work/*.md"); // returns an array of 
           return (
             <li class=" flex flex-col content-center mb-4">
               <div class="flex justify-center">
-                <h2 class="font-gs text-[6vw] leading-[.9em]">
+                <h2 class="font-gs md:text-[6vw] text-[10vw] leading-[.9em] text-center max-w-[80vw]">
                   {name} <span class="font-ak text-sm">{year}</span>
                 </h2>
               </div>
               <div class="flex justify-center mt-4 mb-8">
                 <div class="flex w-[50vw] justify-between">
-                  <p>{avail}</p>
+                  <p class="hidden md:block">{avail}</p>
                   <a href={item.url}>PROJECT DETAILS</a>
-                  <p>{type}</p>
+                  <p class="hidden md:block">{type}</p>
                   <p>{category}</p>
                 </div>
               </div>
@@ -36,3 +36,5 @@ const items = await Astro.glob("../../pages/work/*.md"); // returns an array of 
     </ul>
   </div>
 </Section>
+
+<!-- lg / md -->

@@ -36,10 +36,11 @@ canvas {
   height: 100%;
 }
 
-/* ------------------------------  Layout */
 main {
-  min-height: 100vh;
+  border: 1px solid transparent;
 }
+
+/* ------------------------------  Layout */
 
 .Section {
   /* border: 1px solid blue; */

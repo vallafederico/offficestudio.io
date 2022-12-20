@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/WorkLayout.astro
-name: Product Name
+name: Smoking Objects • Ashtray VII
 
 year: 2022
 type: Armchair
