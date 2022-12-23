@@ -25,6 +25,11 @@ export class Text extends Observe {
       ...anim,
     };
 
+    this.val = {
+      x: "00%",
+      y: "100%",
+    };
+
     this.element = element;
     this.animated = returnSplit(this.element);
 
@@ -43,6 +48,7 @@ export class Text extends Observe {
   animateIn() {
     if (this.animation) this.animation.kill();
     this.animation = gsap.to(this.animated, {
+      x: "0%",
       y: "0%",
       duration: this.anim.d,
       ease: this.anim.ease,
@@ -58,7 +64,8 @@ export class Text extends Observe {
     this.stop();
     if (this.animation) this.animation.kill();
     this.animation = gsap.to(this.animated, {
-      y: "200%",
+      y: this.val.y,
+      x: this.val.x,
       duration: this.anim.d,
       ease: this.anim.ease,
       delay: 0,
@@ -71,12 +78,18 @@ export class Text extends Observe {
 
   setIn() {
     if (this.animation) this.animation.kill();
-    gsap.set(this.animated, { y: "0%" });
+    gsap.set(this.animated, {
+      y: "0%",
+      x: "0%",
+    });
   }
 
   setOut() {
     if (this.animation) this.animation.kill();
-    gsap.set(this.animated, { y: "200%" });
+    gsap.set(this.animated, {
+      y: this.val.y,
+      x: this.val.x,
+    });
   }
 }
 
@@ -93,20 +106,22 @@ function returnSplit(element) {
       return splitLine(element);
       break;
     default:
-      return splitChar(element);
+      return splitWord(element);
   }
 }
 
 function splitChar(el) {
-  return new SplitText(splitLine(el), {
-    type: "chars",
+  return new SplitText(el, {
+    type: "words, chars",
   }).chars;
 }
+
 function splitWord(el) {
   return new SplitText(splitLine(el), {
-    type: "words",
+    type: "lines, words",
   }).words;
 }
+
 function splitLine(el) {
   const line = new SplitText(el, {
     type: "lines",

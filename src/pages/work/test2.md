@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/WorkLayout.astro
-name: Smoking Objects Ashtray VII
+name: Unconditional Chair
 
-year: 2022
+year: 2021
 type: Armchair
 category: Interior
 avail: US / WW

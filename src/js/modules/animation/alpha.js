@@ -1,8 +1,9 @@
 import { Observe } from "../../util/observe";
+import gsap from "gsap";
 
 // NEEDS CHECKING!
 
-export default class extends Observe {
+export class Alpha extends Observe {
   constructor({ element, anim }) {
     super({
       element,

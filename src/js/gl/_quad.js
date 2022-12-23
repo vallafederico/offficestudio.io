@@ -8,6 +8,7 @@ export default class extends Mesh {
 
     this.geometry = new Plane(this.gl);
     this.program = new Material(this.gl);
+    // this.scale.set(2, 2, 1);
   }
 
   resize() {}

@@ -1,28 +1,33 @@
 import { Text } from "./animation/text";
+import { Alpha } from "./animation/alpha";
+import { List } from "./list";
 
 export default class {
-  constructor() {}
+  constructor() {
+    this.createAnimation();
+  }
 
   resize() {}
 
   /* -- Text */
 
-  createText() {
-    const chars = [...document.querySelectorAll('[data-a="char"]')];
-    const words = [...document.querySelectorAll('[data-a="word"]')];
-    const lines = [...document.querySelectorAll('[data-a="line"]')];
+  createAnimation() {
+    this.text = [
+      ...document.querySelectorAll(
+        '[data-a="char"], [data-a="word"], [data-a="line"]'
+      ),
+    ].map((el) => new Text({ element: el }));
 
-    this.text = {
-      chars: chars.map((el) => new Text({ element: el })),
-      words: words.map((el) => new Text({ element: el })),
-      lines: lines.map((el) => new Text({ element: el })),
-    };
+    this.alpha = [...document.querySelectorAll('[data-a="alpha"]')].map(
+      (el) => new Alpha({ element: el })
+    );
+
+    const listWrapper = document.querySelector('[data-dom="list"]');
+    if (listWrapper) this.list = new List({ element: listWrapper });
   }
 
-  destroyText() {
-    this.text.chars.forEach((char) => char.animateOut());
-    this.text.words.forEach((word) => word.animateOut());
-    this.text.lines.forEach((line) => line.animateOut());
+  destroyAnimation() {
+    this.text?.forEach((char) => char.animateOut());
   }
 
   /* --  Pages */

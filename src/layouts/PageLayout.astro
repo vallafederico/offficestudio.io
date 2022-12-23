@@ -19,6 +19,8 @@ import Nav from "../components/Nav.astro";
 
   <body>
     <Nav />
+    <div data-gl="c"></div>
+
     <div data-taxi>
       <main data-taxi-view class="Main">
         <slot />
@@ -27,7 +29,6 @@ import Nav from "../components/Nav.astro";
 
     <!-- Webgl -->
     <!-- <canvas data-gl="c"></canvas> -->
-    <div data-gl="c"></div>
 
     <script>
       import "../js/app.js";

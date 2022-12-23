@@ -14,7 +14,7 @@ export default class extends Transform {
   create() {
     /* Basic Quad */
     this.quad = new Quad(this.gl);
-    // this.quad.setParent(this);
+    this.quad.setParent(this);
   }
 
   render(t) {
