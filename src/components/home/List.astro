@@ -1,6 +1,5 @@
 ---
 import Section from "../Section.astro";
-
 const items = await Astro.glob("../../pages/work/*.md"); // returns an array of posts that live at ./src/pages/post/*.md
 ---
 
@@ -13,9 +12,13 @@ const items = await Astro.glob("../../pages/work/*.md"); // returns an array of 
       <!--  -->
       {
         items.map((item) => {
-          const { name, type, category, year, avail } = item.frontmatter;
+          const { name, type, category, year, avail, modelurl } =
+            item.frontmatter;
           return (
-            <li class=" flex flex-col content-center mb-4 cursor-pointer">
+            <li
+              data-model={modelurl}
+              class=" flex flex-col content-center mb-4 cursor-pointer"
+            >
               <div class="flex justify-center">
                 <h2
                   data-a="alpha"

@@ -28,11 +28,14 @@ export default class {
 
   destroyAnimation() {
     this.text?.forEach((char) => char.animateOut());
+    this.alpha?.forEach((el) => el.animateOut());
+    this.list?.destroy();
   }
 
   /* --  Pages */
 
   transitionOut(page) {
+    this.destroyAnimation();
     // console.log("DOM•tranOut", page);
 
     return new Promise((resolve) => {
@@ -43,6 +46,7 @@ export default class {
   }
 
   transitionIn(page) {
+    this.createAnimation();
     // console.log("DOM•tranIn", page);
 
     return new Promise((resolve) => {

@@ -1,17 +1,19 @@
-import { ASSETS } from "../../assets/";
-import { loadTexture } from "./texture-loader";
+// import { loadTexture } from "./texture-loader";
+import { loadModel } from "./model-loader";
 
-export default class {
-  constructor(data) {
-    this.data = data;
+export class Loader {
+  constructor(gl) {
+    this.gl = gl;
+
+    this.items = [...document.querySelectorAll("[data-model]")].map((item) => {
+      return loadModel(this.gl, item.dataset.model);
+    });
+
+    console.log(this.items);
   }
 
   async load() {
-    // const [diffuse] = await Promise.all([loadTexture(assets.tx)]);
-    // return {
-    //   diffuse,
-    //   ratio:
-    //     diffuse.source.data.naturalWidth / diffuse.source.data.naturalHeight,
-    // };
+    const [model] = await Promise.all([this.items[0]]);
+    console.log(model);
   }
 }

@@ -91,6 +91,10 @@ export class Text extends Observe {
       x: this.val.x,
     });
   }
+
+  // destroy() {
+
+  // }
 }
 
 /* --- Helpers --- */

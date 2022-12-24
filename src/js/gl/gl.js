@@ -1,7 +1,7 @@
-import { Renderer, Orbit } from "ogl";
+import { Renderer } from "ogl";
 import Cam from "./_camera.js";
 import Scene from "./_scene.js";
-
+import { Loader } from "./util/loader.js";
 // vec3(0.06666666666666667, 0.06666666666666667, 0.06666666666666667);
 
 export default class {
@@ -24,30 +24,50 @@ export default class {
 
     this.camera = new Cam(this.gl, {});
     this.camera.position.set(0, 0, 5);
+  }
 
-    // this.camera.lookAt([0, 0, 0]);
-    // this.controls = new Orbit(this.camera);
+  async load() {
+    this.loader = new Loader(this.gl);
+    await this.loader.load();
 
+    this.init();
+  }
+
+  init() {
     this.scene = new Scene(this.gl);
     this.time = 0;
 
     this.resize();
     this.initEvents();
 
-    // this.render();
+    this.render();
   }
 
   render(scroll = 0) {
     this.time += 0.5;
     // console.log(this.time);
 
-    if (this.controls) this.controls.update();
     if (this.scene) this.scene.render(this.time);
 
     window.requestAnimationFrame(this.render.bind(this));
 
+    this.renderPost(this.time);
+  }
+
+  renderPost(t) {
+    // 1. render scene to rt
     this.renderer.render({
       scene: this.scene,
+      camera: this.camera,
+      target: this.scene.post.rt,
+    });
+
+    // 2. move time in post
+    this.scene.post.render(t);
+
+    // 3. render post to quad
+    this.renderer.render({
+      scene: this.scene.post.quad,
       camera: this.camera,
     });
   }
@@ -72,7 +92,6 @@ export default class {
     this.vp.viewRatio = this.vp.viewSize.w / this.vp.w;
     // this.vp.scrollx = window.scrollX;
     // this.vp.scrolly = window.scrollY;
-
     this.renderer.setSize(this.vp.w, this.vp.h);
     this.camera.perspective({
       aspect: this.vp.ratio,

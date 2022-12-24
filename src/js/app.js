@@ -11,16 +11,23 @@ class App {
 
     this.time = 0;
 
+    this.load();
+  }
+
+  async load() {
+    this.pages = new Pages();
+    this.scroll = new Scroll();
+    this.dom = new Dom();
+
+    this.gl = new Gl();
+    await this.gl.load();
+
+    // init DOM, SCROLL, PAGES after load
+
     this.init();
   }
 
   init() {
-    this.scroll = new Scroll();
-    this.pages = new Pages();
-    this.dom = new Dom();
-
-    this.gl = new Gl();
-
     this.initEvents();
     this.render();
   }

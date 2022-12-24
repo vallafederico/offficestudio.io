@@ -38,7 +38,7 @@ export class List {
 
   destroy() {
     this.items.li.forEach((el) => (el.onclick = null));
-    this.items.trig.forEach((el) => el.destroy());
+    this.items.trig.forEach((el) => el.animateOut());
   }
 }
 

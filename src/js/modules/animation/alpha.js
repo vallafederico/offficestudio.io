@@ -26,6 +26,8 @@ export class Alpha extends Observe {
 
     this.element = element;
     this.animated = this.element;
+
+    this.setOut();
   }
 
   isIn() {

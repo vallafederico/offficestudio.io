@@ -1,12 +1,12 @@
 import { Plane, Mesh } from "ogl";
 import Material from "./mat/_model";
 
-export default class extends Mesh {
+export class Model extends Mesh {
   constructor(gl, geometry = null) {
     super(gl);
     this.gl = gl;
 
-    this.geometry = geometry;
+    this.geometry = new Plane(this.gl);
     this.program = new Material(this.gl);
 
     // this.mesh.position.x = 1;

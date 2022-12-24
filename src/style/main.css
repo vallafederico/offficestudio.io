@@ -45,7 +45,7 @@ canvas {
 }
 
 main {
-  border: 1px solid transparent;
+  border: 0px solid transparent;
 }
 
 /* ------------------------------  Layering */

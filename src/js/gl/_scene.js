@@ -1,6 +1,6 @@
 import { Transform } from "ogl";
-
-import Quad from "./_quad.js";
+import { Post } from "./post/post.js";
+import { Model } from "./model.js";
 
 export default class extends Transform {
   constructor(gl, data = {}) {
@@ -12,19 +12,22 @@ export default class extends Transform {
   }
 
   create() {
-    /* Basic Quad */
-    this.quad = new Quad(this.gl);
-    this.quad.setParent(this);
+    this.post = new Post(this.gl);
+
+    this.model = new Model(this.gl);
+    this.model.setParent(this);
   }
 
   render(t) {
     if (!this.isOn) return;
-    if (this.quad) this.quad.render(t);
+    // if (this.quad) this.quad.render(t);
+
+    this.post?.render(t);
     // if (this.quads) this.quads.forEach((item) => item.render(t));
   }
 
   resize(vp) {
     this.vp = vp;
-    if (this.quad) this.quad.resize(vp);
+    // if (this.quad) this.quad.resize(vp);
   }
 }

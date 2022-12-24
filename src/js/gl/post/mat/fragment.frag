@@ -9,5 +9,5 @@ void main() {
     vec4 img = texture2D(u_texture, v_uv);
 
     gl_FragColor.rgb = img.rgb;
-    gl_FragColor.a = 1.0;
+    gl_FragColor.a = img.a;
 }

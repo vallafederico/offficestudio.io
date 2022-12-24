@@ -2,14 +2,12 @@
 
 ## The Plan
 
-1. Build html & css
-
-2. build basic js layer
-
-3. add webgl
-
-4. animations!
-
-5. page transitions
-
-6. more animations
+- [x] Build html & css
+- [x] build basic js layer
+- [x] add webgl
+- [x] (DOM) animations!
+- [ ] (DOM) page transitions
+- [ ] router and page transition options
+- [ ] (GL) page transitions
+- [ ] (GL) slider behaviour
+- [ ] (GL) more animations

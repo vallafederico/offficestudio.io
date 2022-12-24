@@ -34,16 +34,16 @@ import Nav from "../components/Nav.astro";
           <li class="w-[50vw] pr-[10%] flex flex-col md:items-end">
             {
               size.map((unit) => {
-                return <ul>{unit}</ul>;
+                return <ul data-a="line">{unit}</ul>;
               })
             }
           </li>
-          <div class="w-[30ch] uppercase"><slot /></div>
+          <div class="w-[30ch] uppercase" data-a="alpha"><slot /></div>
         </div>
         <!-- II -->
         <div class="c justify-between hidden md:flex">
-          <a href="/">BACK HOME</a>
-          <p>DOWNLOAD SPEC SHEET</p>
+          <a data-a="line" href="/">BACK HOME</a>
+          <p data-a="line">DOWNLOAD SPEC SHEET</p>
         </div>
         <!-- III -->
         <div class="c md:flex justify-between items-end">
@@ -51,12 +51,13 @@ import Nav from "../components/Nav.astro";
             <p>{year}</p>
 
             <h1
-              class="font-gs uppercase md:text-[5vw] text-[10vw] md:max-w-[30ch] max-w-[60vw] leading-[.8em]"
+              data-a="word"
+              class="font-gs uppercase md:text-[5vw] text-[10vw] md:max-w-[20ch] max-w-[60vw] leading-[.8em] break-words"
             >
               {name}
             </h1>
           </div>
-          <p class="pt-8 md:pt-0 text-right">REQUEST PURCHASE</p>
+          <p class="pt-8 md:pt-0 text-right" data-a="line">REQUEST PURCHASE</p>
         </div>
       </main>
     </div>
