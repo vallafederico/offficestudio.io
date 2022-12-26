@@ -146,6 +146,12 @@ body {
 
 [data-a="trig"] {
   position: relative;
+  pointer-events: none;
+}
+
+.active [data-a="trig"] {
+  position: relative;
+  pointer-events: all;
 }
 
 [data-a="trig"]:after {

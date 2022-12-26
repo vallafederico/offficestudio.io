@@ -8,7 +8,7 @@ export default class extends Lenis {
       smooth: true,
       easing: easeOutExpo,
       direction: "vertical",
-      smoothTouch: true,
+      smoothTouch: false,
       touchMultiplier: 2,
     });
 

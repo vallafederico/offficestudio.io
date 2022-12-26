@@ -12,7 +12,7 @@ size: ["W 087", "H 110", "D 075"]
 # draft: true
 
 # webgl
-modelurl: "3d/chair.glb"
+modelurl: "3d/chair2.glb"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

@@ -2,7 +2,6 @@ import { Renderer } from "ogl";
 import Cam from "./_camera.js";
 import Scene from "./_scene.js";
 import { Loader } from "./util/loader.js";
-// vec3(0.06666666666666667, 0.06666666666666667, 0.06666666666666667);
 
 export default class {
   constructor() {
@@ -52,18 +51,22 @@ export default class {
     window.requestAnimationFrame(this.render.bind(this));
 
     this.renderPost(this.time);
+    // this.renderer.render({
+    //   scene: this.scene,
+    //   camera: this.camera,
+    // });
   }
 
   renderPost(t) {
     // 1. render scene to rt
-    this.renderer.render({
-      scene: this.scene,
-      camera: this.camera,
-      target: this.scene.post.rt,
-    });
+    // this.renderer.render({
+    //   scene: this.scene,
+    //   camera: this.camera,
+    //   target: this.scene.post.rt,
+    // });
 
     // 2. move time in post
-    this.scene.post.render(t);
+    this.scene.render(t);
 
     // 3. render post to quad
     this.renderer.render({
