@@ -42,7 +42,7 @@ export class Loader {
       window.app.store.slider.current = startsAt;
     }
 
-    // console.log({ startsAt });
+    console.log({ startsAt });
   }
 }
 
