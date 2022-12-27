@@ -6,7 +6,7 @@ const { title, frontmatter } = Astro.props;
 const { size, name, year } = frontmatter;
 
 // console.log(Astro.props, size);
-
+import Canvas from "../components/Canvas.astro";
 import Nav from "../components/Nav.astro";
 ---
 
@@ -62,12 +62,6 @@ import Nav from "../components/Nav.astro";
       </main>
     </div>
 
-    <!--  -->
-    <!-- Webgl -->
-    <div data-gl="c"></div>
-
-    <script>
-      import "../js/app.js";
-    </script>
+    <Canvas />
   </body>
 </html>

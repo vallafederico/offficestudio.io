@@ -41,7 +41,7 @@ export default class {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 500);
+      }, 800);
     });
   }
 
@@ -52,7 +52,7 @@ export default class {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 500);
+      }, 800);
     });
   }
 }

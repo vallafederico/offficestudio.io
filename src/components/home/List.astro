@@ -1,6 +1,8 @@
 ---
 import Section from "../Section.astro";
-const items = await Astro.glob("../../pages/work/*.md"); // returns an array of posts that live at ./src/pages/post/*.md
+
+import { getPages } from "../content.js";
+const items = await getPages();
 ---
 
 <Section className="mb-[50vh]">

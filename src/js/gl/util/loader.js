@@ -1,19 +1,23 @@
 // import { loadTexture } from "./texture-loader";
 import { loadModel } from "./model-loader";
 
+import { getGlPages } from "../../../components/content";
+
 export class Loader {
   constructor(gl) {
     this.gl = gl;
-
-    this.items = [...document.querySelectorAll("[data-model]")].map((item) => {
-      return loadModel(this.gl, item.dataset.model);
-    });
-
-    // console.log(this.items);
   }
 
   async load() {
     this.assets = {};
+
+    // get info from astro
+    const cont = await getGlPages();
+    this.computeInitialStore(cont); // add to window store
+
+    this.items = cont.map((item) =>
+      loadModel(this.gl, window.location.origin + "/" + item.modelurl)
+    );
 
     console.time("load"); // ----
 
@@ -27,12 +31,18 @@ export class Loader {
     window.assets = this.assets;
   }
 
-  async loadRest() {
-    console.time("loadRest"); // ----
-    this.assets.models = await Promise.all([...this.items]);
-    console.log(this.assets.models);
-    // console.log(model);
-    console.timeEnd("loadRest"); // ----
+  computeInitialStore(cont) {
+    const startsAt = cont.findIndex(
+      (item) => item.url === window.location.pathname
+    );
+
+    if (startsAt === -1) {
+      window.app.store.slider.current = 0;
+    } else {
+      window.app.store.slider.current = startsAt;
+    }
+
+    // console.log({ startsAt });
   }
 }
 

@@ -11,6 +11,15 @@ class App {
 
     this.time = 0;
 
+    // global data storage (INIT)
+    // window.app.store.slider.current
+
+    this.store = {
+      slider: {
+        current: 0,
+      },
+    };
+
     this.load();
   }
 

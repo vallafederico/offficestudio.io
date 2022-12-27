@@ -2,6 +2,9 @@
 layout: ../../layouts/WorkLayout.astro
 name: Smoking Objects Ashtray VII
 
+date: 2022-05-01
+featured: true
+
 year: 2022
 type: Armchair
 category: Interior

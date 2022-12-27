@@ -12,17 +12,31 @@ export default class extends Core {
       },
     });
 
-    // this.initEvents();
+    this.useProps();
     window.router = this;
   }
 
+  useProps() {
+    // setup props
+    this.props = {
+      from: getPath(window.location.href),
+      to: null,
+    };
+
+    this.on(
+      "NAVIGATE_OUT",
+      ({ trigger }) => (this.props.to = getPath(trigger.href))
+    );
+  }
+
   async transitionOut(page) {
+    // console.log("props", this.props.from, this.props.to);
+
     await Promise.allSettled([
-      window.app.dom.transitionOut(page),
-      // window.app.gl.transitionOut(page),
+      window.app.dom.transitionOut(page, this.props),
+      // window.app.gl.transitionOut(page, this.props),
     ]);
 
-    // console.log("transition Out", page);
     return Promise.resolve();
   }
 
@@ -32,24 +46,10 @@ export default class extends Core {
       // window.app.gl.transitionIn(page),
     ]);
 
-    // console.log("transition In", page);
+    this.props.from = this.props.to;
     return Promise.resolve();
   }
 }
-
-// initEvents() {
-//   this.on("NAVIGATE_OUT", ({ from, trigger }) => {
-//     // console.log("OUT", from, trigger);
-//   });
-
-//   this.on("NAVIGATE_IN", ({ to, trigger }) => {
-//     // console.log("IN", to, trigger);
-//   });
-
-//   this.on("NAVIGATE_END", ({ to, from, trigger }) => {
-//     // console.log("END", to, from, trigger);
-//   });
-// }
 
 /* -- Transition */
 class Tra {
@@ -76,4 +76,27 @@ class Tra {
   onEnter({ to, trigger, done }) {
     window.app.pages.transitionIn(to).then(() => done());
   }
+}
+
+// initEvents() {
+//   this.on("NAVIGATE_OUT", ({ from, trigger }) => {
+//     // console.log("OUT", from, trigger);
+//   });
+
+//   this.on("NAVIGATE_IN", ({ to, trigger }) => {
+//     // console.log("IN", to, trigger);
+//   });
+
+//   this.on("NAVIGATE_END", ({ to, from, trigger }) => {
+//     // console.log("END", to, from, trigger);
+//   });
+// }
+
+/* --- Utils */
+
+function getPath(url) {
+  const fullUrl = new URL(url);
+  const splitPath = fullUrl.pathname.split("/");
+  const [, second, third] = splitPath;
+  return [second, third];
 }

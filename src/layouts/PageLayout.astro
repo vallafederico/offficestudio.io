@@ -5,6 +5,7 @@ import "../style/main.css";
 const { title } = Astro.props;
 
 import Nav from "../components/Nav.astro";
+import Canvas from "../components/Canvas.astro";
 ---
 
 <!DOCTYPE html>
@@ -19,7 +20,6 @@ import Nav from "../components/Nav.astro";
 
   <body>
     <Nav />
-    <div data-gl="c"></div>
 
     <div data-taxi>
       <main data-taxi-view class="Main">
@@ -27,11 +27,6 @@ import Nav from "../components/Nav.astro";
       </main>
     </div>
 
-    <!-- Webgl -->
-    <!-- <canvas data-gl="c"></canvas> -->
-
-    <script>
-      import "../js/app.js";
-    </script>
+    <Canvas />
   </body>
 </html>

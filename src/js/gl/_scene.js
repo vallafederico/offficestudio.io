@@ -22,14 +22,13 @@ export default class extends Transform {
     this.models = window.assets.mod.map((item) => new Model(this.gl, item));
 
     // initial setup
-    this.txts.current = this.models[0];
-    this.models[0].isActive = true;
-
-    console.log("creating");
+    this.txts.current = this.models[window.app.store.slider.current];
+    this.models[window.app.store.slider.current].isActive = true;
   }
 
   render(t) {
     if (!this.isOn) return;
+
     this.models?.forEach((item) => item.render(t));
 
     this.post?.render(t, this.txts);
@@ -39,19 +38,17 @@ export default class extends Transform {
     this.vp = vp;
     this.post?.resize(vp);
     this.models?.forEach((item) => item.resize(vp));
-
-    // if (this.quad) this.quad.resize(vp);
   }
 
   /* ----- Slider */
-  slide(index) {
-    console.log(index);
-
-    // 1. pre transition
+  slide(index, instant = false) {
     this.txts.next = this.models[index]; // set next
     this.txts.next.isActive = true;
 
-    // 2. transition
+    let d = 1.2;
+
+    if (instant) d = 0;
+
     return new Promise((resolve) => {
       gsap.to(this.txts, {
         val: 1,
@@ -65,6 +62,5 @@ export default class extends Transform {
         },
       });
     });
-    // 3. finish and reset
   }
 }

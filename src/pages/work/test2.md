@@ -2,6 +2,9 @@
 layout: ../../layouts/WorkLayout.astro
 name: Unconditional Chair
 
+date: 2022-05-01
+featured: true
+
 year: 2021
 type: Armchair
 category: Interior

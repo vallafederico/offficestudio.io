@@ -20,7 +20,7 @@ export class List {
         tx.setOut();
         return tx;
       }),
-      current: 0,
+      current: window.app?.store?.slider?.current || 0,
       prev: 0,
     };
 
@@ -35,6 +35,8 @@ export class List {
   async setActive(index) {
     if (!this.canSlide) return;
     this.canSlide = false;
+
+    setTimeout(() => (window.app.store.slider.current = index), 10);
 
     // dom
     this.items.li[this.items.prev].classList.remove("active");
