@@ -36,13 +36,21 @@ export class Loader {
       (item) => item.url === window.location.pathname
     );
 
+    console.log(
+      { startsAt },
+      "current window location to match",
+      window.location.pathname
+    );
+
+    cont.forEach((item, i) => {
+      console.log(item.url);
+    });
+
     if (startsAt === -1) {
       window.app.store.slider.current = 0;
     } else {
       window.app.store.slider.current = startsAt;
     }
-
-    console.log({ startsAt });
   }
 }
 
