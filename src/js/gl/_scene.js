@@ -22,7 +22,7 @@ export default class extends Transform {
     this.models = window.assets.mod.map((item) => new Model(this.gl, item));
 
     // initial setup
-    console.log("setup", window.app.store);
+    // console.log("setup", window.app.store);
     this.txts.current = this.models[window.app.store.slider.current];
     this.models[window.app.store.slider.current].isActive = true;
   }

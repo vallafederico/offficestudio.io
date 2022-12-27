@@ -32,19 +32,27 @@ export class Loader {
   }
 
   computeInitialStore(cont) {
-    const startsAt = cont.findIndex(
-      (item) => item.url === window.location.pathname
-    );
+    // clean pathname
+    let { pathname } = window.location;
+    if (
+      pathname.length > 1 &&
+      pathname.substring(pathname.length - 1) === "/"
+    ) {
+      pathname = pathname.substring(0, pathname.length - 1);
+    }
 
-    console.log(
-      { startsAt },
-      "current window location to match",
-      window.location.pathname
-    );
+    // find index of current page
+    const startsAt = cont.findIndex((item) => item.url === pathname);
 
-    cont.forEach((item, i) => {
-      console.log(item.url);
-    });
+    // console.log(
+    //   { startsAt },
+    //   "current window location to match",
+    //   window.location.pathname
+    // );
+
+    // cont.forEach((item, i) => {
+    //   console.log(item.url);
+    // });
 
     if (startsAt === -1) {
       window.app.store.slider.current = 0;
