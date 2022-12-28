@@ -24,11 +24,12 @@ export async function getGlPages() {
   const array = await getPages();
 
   return array.map((item, i) => {
-    const { modelurl, url } = item.frontmatter;
+    const { modelurl, textureurl } = item.frontmatter;
     return {
       i,
       modelurl,
       url: item.url,
+      textureurl,
     };
   });
 }

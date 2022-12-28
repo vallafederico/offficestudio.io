@@ -1,3 +1,5 @@
+import mtc_dark from "./mtc_dark.webp";
+
 export const ASSETS = {
-  //   img: null,
+  mtc_dark,
 };

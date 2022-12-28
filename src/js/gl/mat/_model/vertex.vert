@@ -12,14 +12,18 @@ uniform mat3 normalMatrix;
 uniform float u_time;
 
 varying vec3 v_normal;
+varying vec3 v_view;
 varying vec2 v_uv;
 
 
 void main() {
   vec3 pos = position;
 
+
   gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
 
   v_normal = normalize(normalMatrix * normal);
+  v_view = normalize(- gl_Position.xyz);
+
   v_uv = uv;
 }

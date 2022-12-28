@@ -19,6 +19,15 @@ export default class extends Lenis {
     this.init();
   }
 
+  scrollToTarget(target, center = true, duration = 2) {
+    this.scrollTo(target, {
+      offset: center ? -window.innerHeight / 2 : 0,
+      duration,
+      easing: easeOutExpo,
+      // immediate,
+    });
+  }
+
   init() {
     this.y = window.scrollY;
     this.max = window.innerHeight;

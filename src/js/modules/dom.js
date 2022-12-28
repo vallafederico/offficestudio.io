@@ -34,7 +34,7 @@ export default class {
 
   /* --  Pages */
 
-  transitionOut(page) {
+  transitionOut(page, { from, to }) {
     this.destroyAnimation();
     // console.log("DOM•tranOut", page);
 
@@ -45,9 +45,38 @@ export default class {
     });
   }
 
-  transitionIn(page) {
+  transitionIn(page, { from, to }) {
     this.createAnimation();
-    // console.log("DOM•tranIn", page);
+    // console.log("TIN >", to);
+
+    if (to[0] === "") {
+      // transitioning to home
+
+      // > scroll to active item
+      setTimeout(() => {
+        window.app.scroll.scrollToTarget(
+          window.app.dom.list.items.li[window.app.store.slider.current]
+        );
+      }, 50);
+
+      // > spinner can spin
+      window.app.gl.scene.spinner.animateSpin(1, 0.2);
+      window.app.gl.scene.toTextured(0, { d: 1.2, del: 0 });
+    }
+
+    if (to[0] === "work") {
+      // trantisioning to work group
+      if (to[1].length > 1) {
+        // transitioning to work item
+        console.log("T> item");
+        // > spinner can NOT spin
+        window.app.gl.scene.spinner.animateSpin(0, 3);
+        window.app.gl.scene.toTextured(1, { d: 1.2, del: 0.2 });
+      } else {
+        // transitioning to work archive page
+        console.log("T> work archive");
+      }
+    }
 
     return new Promise((resolve) => {
       setTimeout(() => {

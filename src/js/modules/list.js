@@ -36,7 +36,7 @@ export class List {
     if (!this.canSlide) return;
     this.canSlide = false;
 
-    setTimeout(() => (window.app.store.slider.current = index), 10);
+    setTimeout(() => (window.app.store.slider.current = index), 5);
 
     // dom
     this.items.li[this.items.prev].classList.remove("active");

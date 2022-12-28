@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/WorkLayout.astro
-name: Unconditional Chair
+name: Walking Armchair
 
 date: 2022-05-01
 featured: true
 
-year: 2021
+year: 2022
 type: Armchair
 category: Interior
 avail: US / WW
@@ -15,7 +15,8 @@ size: ["W 087", "H 110", "D 075"]
 # draft: true
 
 # webgl
-modelurl: "3d/chair2.glb"
+modelurl: "3d/wide-chair.glb"
+textureurl: "3d/wide-chair-diff.png"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

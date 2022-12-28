@@ -6,6 +6,7 @@ const { title } = Astro.props;
 
 import Nav from "../components/Nav.astro";
 import Canvas from "../components/Canvas.astro";
+import Preloader from "../components/Preloader.astro";
 ---
 
 <!DOCTYPE html>
@@ -20,6 +21,7 @@ import Canvas from "../components/Canvas.astro";
 
   <body>
     <Nav />
+    <!-- <Preloader /> -->
 
     <div data-taxi>
       <main data-taxi-view class="Main">

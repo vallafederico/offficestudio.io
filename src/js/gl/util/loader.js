@@ -1,7 +1,7 @@
-// import { loadTexture } from "./texture-loader";
+import { loadTexture } from "./texture-loader";
 import { loadModel } from "./model-loader";
-
 import { getGlPages } from "../../../components/content";
+import { ASSETS } from "../../assets";
 
 export class Loader {
   constructor(gl) {
@@ -19,15 +19,23 @@ export class Loader {
       loadModel(this.gl, window.location.origin + "/" + item.modelurl)
     );
 
-    console.time("load"); // ----
+    this.itemTextures = cont.map((item) =>
+      loadTexture(this.gl, window.location.origin + "/" + item.textureurl)
+    );
 
-    // const [model] = await Promise.all([this.items[0]]);
+    // --------------------------------------------------------------------------------
+    console.time("load");
+    this.assets.mod = await Promise.all([...this.items]); // 3d models
+    this.assets.textures = await Promise.all([...this.itemTextures]); // 3d textures
 
-    this.assets.mod = await Promise.all([...this.items]);
+    const [mtc_dark] = await Promise.all([
+      loadTexture(this.gl, ASSETS.mtc_dark),
+    ]);
 
-    console.timeEnd("load"); // ----
+    console.timeEnd("load");
+    // --------------------------------------------------------------------------------
 
-    // store in window
+    this.assets.mtc_dark = mtc_dark;
     window.assets = this.assets;
   }
 
@@ -56,8 +64,10 @@ export class Loader {
 
     if (startsAt === -1) {
       window.app.store.slider.current = 0;
+      window.app.store.work = false;
     } else {
       window.app.store.slider.current = startsAt;
+      window.app.store.work = true;
     }
   }
 }

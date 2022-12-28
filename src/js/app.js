@@ -18,6 +18,10 @@ class App {
       slider: {
         current: 0,
       },
+      anim: {
+        spin: 1,
+        textured: 0,
+      },
     };
 
     this.load();
@@ -26,10 +30,11 @@ class App {
   async load() {
     this.pages = new Pages();
     this.scroll = new Scroll();
-    this.dom = new Dom();
 
     this.gl = new Gl();
     await this.gl.load();
+
+    this.dom = new Dom();
 
     // init DOM, SCROLL, PAGES after load
 

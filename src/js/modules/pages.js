@@ -42,7 +42,7 @@ export default class extends Core {
 
   async transitionIn(page) {
     await Promise.allSettled([
-      window.app.dom.transitionIn(page),
+      window.app.dom.transitionIn(page, this.props),
       // window.app.gl.transitionIn(page),
     ]);
 

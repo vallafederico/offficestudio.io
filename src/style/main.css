@@ -14,11 +14,47 @@
   --eas-ei: cubic-bezier(0.75, 0.1, 0.75, 1);
 }
 
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4 {
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+[data-selectable] {
+  user-select: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
 body {
   background: var(--color-black);
   color: var(--color-white);
   font-family: "ak";
   font-size: 14px;
+}
+
+body {
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+/* (Optional) Apply a "closed-hand" cursor during drag operation. */
+body:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
 }
 
 /* ------------------------------  Webgl */
@@ -171,4 +207,11 @@ body {
 .active [data-a="trig"]:after {
   transition: transform var(--time-1) var(--eas-eo) 0s;
   transform: scaleX(1);
+}
+
+/* -- Svgs */
+svg {
+  min-width: 10vw;
+  min-height: 10vh;
+  border: 1px solid pink;
 }

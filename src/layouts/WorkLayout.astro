@@ -8,6 +8,7 @@ const { size, name, year } = frontmatter;
 // console.log(Astro.props, size);
 import Canvas from "../components/Canvas.astro";
 import Nav from "../components/Nav.astro";
+import Preloader from "../components/Preloader.astro";
 ---
 
 <!DOCTYPE html>
@@ -22,10 +23,12 @@ import Nav from "../components/Nav.astro";
 
   <body>
     <Nav />
+    <!-- <Preloader /> -->
 
     <!--  -->
     <div data-taxi>
       <main
+        data-layer="top"
         data-taxi-view
         class="Main flex h-[100vh] flex-col justify-between md:pt-8 pt-[15vh] pb-8 text-xs mt-0"
       >
