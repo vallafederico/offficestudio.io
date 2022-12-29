@@ -12,6 +12,8 @@ export default class extends Core {
       },
     });
 
+    this.prevPath = null;
+
     this.useProps();
     window.router = this;
   }
@@ -23,10 +25,13 @@ export default class extends Core {
       to: null,
     };
 
-    this.on(
-      "NAVIGATE_OUT",
-      ({ trigger }) => (this.props.to = getPath(trigger.href))
-    );
+    this.on("NAVIGATE_OUT", ({ trigger }) => {
+      if (trigger === "popstate") {
+        this.props.to = getPath(location.href);
+      } else {
+        this.props.to = getPath(trigger.href);
+      }
+    });
   }
 
   async transitionOut(page) {
@@ -49,6 +54,14 @@ export default class extends Core {
     this.props.from = this.props.to;
     return Promise.resolve();
   }
+}
+
+/* --- Utils */
+function getPath(url) {
+  const fullUrl = new URL(url);
+  const splitPath = fullUrl.pathname.split("/");
+  const [, second, third] = splitPath;
+  return [second, third];
 }
 
 /* -- Transition */
@@ -76,27 +89,4 @@ class Tra {
   onEnter({ to, trigger, done }) {
     window.app.pages.transitionIn(to).then(() => done());
   }
-}
-
-// initEvents() {
-//   this.on("NAVIGATE_OUT", ({ from, trigger }) => {
-//     // console.log("OUT", from, trigger);
-//   });
-
-//   this.on("NAVIGATE_IN", ({ to, trigger }) => {
-//     // console.log("IN", to, trigger);
-//   });
-
-//   this.on("NAVIGATE_END", ({ to, from, trigger }) => {
-//     // console.log("END", to, from, trigger);
-//   });
-// }
-
-/* --- Utils */
-
-function getPath(url) {
-  const fullUrl = new URL(url);
-  const splitPath = fullUrl.pathname.split("/");
-  const [, second, third] = splitPath;
-  return [second, third];
 }

@@ -25,7 +25,9 @@ export class Model extends Transform {
     if (!this.isActive) return;
     this.program.time = t;
 
-    // console.log(mx, my);
+    this.rotation.z = mx;
+    this.rotation.x = mx;
+    this.rotation.y = my;
 
     this.mesh.rotation.x = y;
     this.mesh.rotation.y = x;

@@ -19,6 +19,8 @@ export class Spinner {
       y: 0,
       mx: 0,
       my: 0,
+      mvmtX: 0,
+      mvmtY: 0,
       ww: window.innerWidth,
       wh: window.innerHeight,
     };
@@ -74,16 +76,15 @@ export class Spinner {
   }
 
   render() {
-    // mouse
-    // this.mouse.mx = lerp(this.mouse.mx, this.mouse.x, 0.005);
-    // this.mouse.my = lerp(this.mouse.my, this.mouse.y, 0.005);
-
     // raf
     this.velocity.x *= 0.95;
     this.velocity.y *= 0.95;
 
-    // console.log();
+    // mouse
+    this.mouse.mx = lerp(this.mouse.mx, this.velocity.x, 0.1);
+    this.mouse.my = lerp(this.mouse.my, this.velocity.y, 0.1);
 
+    // spin
     this.spin.x +=
       this.velocity.x +
       Math.sign(this.velocity.x) * this.coeff * (1 - Number(this.pointerDown));
@@ -102,7 +103,8 @@ export class Spinner {
 
   /* --- Animation */
   animateSpin(val = 0, d = 3, del = 0) {
-    gsap.to(window.app.store.anim, {
+    if (this.a_spin) this.a_spin.kill();
+    this.a_spin = gsap.to(window.app.store.anim, {
       spin: val,
       duration: d,
       ease: "power4.inOut",

@@ -11,7 +11,6 @@ class App {
 
     this.time = 0;
 
-    // global data storage (INIT)
     // window.app.store.slider.current
 
     this.store = {
@@ -32,6 +31,7 @@ class App {
     this.scroll = new Scroll();
 
     this.gl = new Gl();
+
     await this.gl.load();
 
     this.dom = new Dom();

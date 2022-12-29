@@ -12,6 +12,9 @@ export default class extends Transform {
 
     this.create();
     this.isOn = true;
+
+    // initial index
+    this.currentIndex = window.app.store.slider.current;
   }
 
   create() {
@@ -38,10 +41,14 @@ export default class extends Transform {
     if (!this.isOn) return;
     this.spinner.render();
 
+    // console.log(this.spinner.mouse.mx);
+
     this.models?.forEach((item) =>
       item.render(t, this.spinner.spin, this.spinner.mouse)
     );
 
+    // this.post.quad.program.mvel =
+    //   (this.spinner.mouse.mx + this.spinner.mouse.my) * 0.2;
     this.post?.render(t, this.txts);
   }
 
@@ -52,21 +59,21 @@ export default class extends Transform {
     this.spinner?.resize();
   }
 
-  /* ----- Mouse */
-
   /* ----- Slider */
   slide(index, instant = false) {
+    if (index === this.currentIndex) return Promise.resolve();
+    this.currentIndex = index;
+
     this.txts.next = this.models[index]; // set next
     this.txts.next.isActive = true;
 
     let d = 1;
-
     if (instant) d = 0;
 
     return new Promise((resolve) => {
       gsap.to(this.txts, {
         val: 1,
-        ease: "expo.out",
+        ease: "power2",
         duration: d,
         onComplete: () => {
           this.txts.current = this.txts.next;

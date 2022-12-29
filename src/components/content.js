@@ -3,8 +3,9 @@ export async function getPages() {
   const pageArray = [];
 
   for (const path in pages) {
-    const w = await pages[path]();
-    pageArray.push(w);
+    // console.log(pages[path]);
+    const page = await pages[path]();
+    pageArray.push(page);
   }
 
   // sort by date
@@ -13,8 +14,6 @@ export async function getPages() {
   );
 
   // uncheck featured
-
-  // push to global store
 
   return pageArray;
 }
@@ -25,6 +24,7 @@ export async function getGlPages() {
 
   return array.map((item, i) => {
     const { modelurl, textureurl } = item.frontmatter;
+
     return {
       i,
       modelurl,

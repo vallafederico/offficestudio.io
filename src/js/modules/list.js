@@ -46,6 +46,9 @@ export class List {
     this.items.prev = index;
 
     // wait gl transition then reset
+    // if (index === this.items.current) return;
+    // this.items.current = index;
+
     await window.app?.gl.scene.slide(index);
     this.canSlide = true;
   }
@@ -56,8 +59,8 @@ export class List {
   }
 }
 
-class Item {
-  constructor({ element }) {
-    this.element = element;
-  }
-}
+// class Item {
+//   constructor({ element }) {
+//     this.element = element;
+//   }
+// }

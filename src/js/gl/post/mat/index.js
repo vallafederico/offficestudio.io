@@ -15,8 +15,10 @@ export default class extends Program {
 
     this.uniforms = {
       u_time: { value: 0 },
-      // u_texture: { value: null },
+      // RTs
       u_a_trans: { value: 0 },
+      u_a_vel: { value: 0 },
+      u_a_mv: { value: 0 },
       // RTs
       u_current: { value: null },
       u_next: { value: null },
@@ -27,9 +29,14 @@ export default class extends Program {
     this.uniforms.u_time.value = t;
   }
 
-  // set texture(texture) {
-  //   this.uniforms.u_texture.value = texture;
-  // }
+  set vel(val) {
+    // console.log("vel", val);
+    this.uniforms.u_a_vel.value = val * 0.0006;
+  }
+
+  set mvel(val) {
+    this.uniforms.u_a_mv.value = val;
+  }
 
   set current(texture) {
     this.uniforms.u_current.value = texture;

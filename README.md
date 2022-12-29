@@ -10,12 +10,14 @@
 - [x] router and page transition options
 - [ ] preloader
 
-- [ ] (GL) spinner and movements
-- [ ] (GL) materials and rendering
+- [x] (GL) spinner and movements
+- [x] (GL) materials and rendering
 
-- [ ] (GL) page transitions
 - [ ] (GL) slider behaviour
+- [ ] (GL) page transitions
 - [ ] (GL) more animations
+
+- [ ] (GL) material to material
 
 ### Additional
 
@@ -23,7 +25,15 @@
 
 ### Pre Launch
 
+- [ ] split loading ops for only what's necessary / page based
+
 - [ ] OG metas
 - [ ] check links
 - [x] favicon
 - [ ] policies - cookie & privacy
+
+#### Todo
+
+- [x] kill can spin animation if re-triggered otherwise fast clicks kill it
+- [x] back button kills the app (in `pages.js`)
+- [ ] promisify loading
