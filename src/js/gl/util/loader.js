@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import { loadTexture } from "./texture-loader";
 import { loadModel } from "./model-loader";
 import { getGlPages } from "../../../components/content";
@@ -6,38 +7,83 @@ import { ASSETS } from "../../assets";
 export class Loader {
   constructor(gl) {
     this.gl = gl;
+    this.wrapper = document.querySelector('[data-loader="wrapper"]');
+    this.line = document.querySelector('[data-loader="line"]');
+
+    if (!this.wrapper) return;
+    if (!this.line) this.wrapper.remove();
   }
 
   async load() {
-    this.assets = {};
-
-    // get info from astro
     const cont = await getGlPages();
+    this.computeInitialStore(cont);
 
-    this.computeInitialStore(cont); // add to window store
+    this.full = cont.length * 2 + 1 - 1;
+    this.count = 0;
 
-    this.items = cont.map((item) =>
-      loadModel(this.gl, window.location.origin + "/" + item.modelurl)
-    );
-
-    this.itemTextures = cont.map((item) =>
-      loadTexture(this.gl, window.location.origin + "/" + item.textureurl)
-    );
-
-    // --------------------------------------------------------------------------------
     console.time("load");
-    this.assets.mod = await Promise.all([...this.items]); // 3d models
-    this.assets.textures = await Promise.all([...this.itemTextures]); // 3d textures
+    // --------------------------------------------------------------------------------
 
-    const [mtc_dark] = await Promise.all([
+    const [mod, textures, mtc_dark] = await Promise.all([
+      Promise.all([
+        ...cont.map((item) =>
+          loadModel(this.gl, window.location.origin + "/" + item.modelurl).then(
+            (val) => {
+              this.updateProgress();
+              return val;
+            }
+          )
+        ),
+      ]),
+      Promise.all([
+        ...cont.map((item) =>
+          loadTexture(
+            this.gl,
+            window.location.origin + "/" + item.textureurl
+          ).then((val) => {
+            this.updateProgress();
+            return val;
+          })
+        ),
+      ]),
       loadTexture(this.gl, ASSETS.mtc_dark),
     ]);
 
-    console.timeEnd("load");
-    // --------------------------------------------------------------------------------
+    window.assets = {
+      mod,
+      textures,
+      mtc_dark,
+    };
 
-    this.assets.mtc_dark = mtc_dark;
-    window.assets = this.assets;
+    // --------------------------------------------------------------------------------
+    console.timeEnd("load");
+  }
+
+  updateProgress() {
+    this.count++;
+
+    this.perc = this.count / this.full;
+    const perc = Math.floor(this.perc * 100);
+
+    if (!this.line) return;
+    gsap.to(this.line, {
+      duration: 0.1,
+      ease: "expo.out",
+      scaleX: perc + "%",
+    });
+
+    if (perc === 100) {
+      if (!this.wrapper) return;
+      gsap.to(this.wrapper, {
+        duration: 0.3,
+        autoAlpha: 0,
+        onComplete: () => {
+          this.wrapper.remove();
+        },
+      });
+    }
+
+    // console.log("loaded", this.count, perc);
   }
 
   computeInitialStore(cont) {

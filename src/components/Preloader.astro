@@ -1,16 +1,76 @@
 ---
-// import ChairSvg from "/svg/ic-chairsvg.svg";
-// import LoungeSvg from "/svg/ic-loungesvg.svg";
-// import ObjectSvg from "/svg/ic-objsvg.svg";
-// import SpaceSvg from "/svg/ic-spacesvg.svg";
+import NameSvg from "/svg/name-textsvg.svg";
 ---
 
 <figure
   class="preloader fixed w-screen h-screen flex items-center justify-center bg-black z-50"
   data-loader="wrapper"
 >
-  <div>
-    <div></div>
-    <div></div>
+  <div class="w-[30vw] flex flex-col items-center">
+    <!-- Name -->
+    <img src={NameSvg} alt="Office For Future Furnishing" class="w-1/2 mb-12" />
+    <!-- line -->
+    <div class="w-full bg-[#5a5a5a] h-[1px] flex">
+      <div data-loader="line" class="bg-white w-full origin-left">
+        <script>
+          document
+            .querySelector('[data-loader="line"]')
+            .parentElement.parentElement.classList.add("active");
+        </script>
+      </div>
+    </div>
+
+    <!-- svgs -->
+    <div class="flex justify-between h-[3em] w-full mt-12">
+      <!-- Chair -->
+      <svg
+        class="icon loader-icon icon--obj"
+        width="23"
+        height="41"
+        viewBox="0 0 23 41"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="icon-path"
+          d="M1 25V39L14.5 25.5M1 25H14.5M1 25L14.5 11.5M14.5 25V25.5M14.5 25V11.5M14.5 25.5V39L22 31.5V2L14.5 9.5V11.5"
+        ></path>
+      </svg>
+      <!-- Lounge -->
+      <svg
+        class="icon loader-icon icon--obj"
+        width="47"
+        height="21"
+        viewBox="0 0 47 21"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1 9.85507L10.2157 1H31M1 9.85507H21.7843L31 1M1 9.85507V20.5H35L45.6449 9.85507H31V1"
+        ></path>
+      </svg>
+
+      <!-- Obj -->
+      <svg
+        class="icon loader-icon icon--obj"
+        width="76"
+        height="36"
+        viewBox="0 0 76 36"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1 22.5V34.5L13 22.5M1 22.5L20.5 1H75V22.5L63 34.5V22.5H13M1 22.5H13"
+        ></path>
+      </svg>
+
+      <!-- Space -->
+      <svg
+        class="icon loader-icon icon--space"
+        width="51"
+        height="37"
+        viewBox="0 0 51 37"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M1 35V11M1 11H10.5V23H32V35L50 17V0.5H11.5L1 11Z"></path>
+      </svg>
+    </div>
   </div>
 </figure>

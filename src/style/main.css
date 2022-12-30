@@ -10,8 +10,11 @@
   /* Animation */
   --time-0: 0.3s;
   --time-1: 1s;
+  --time-2: 2s;
+  --time-3: 3s;
   --eas-eo: cubic-bezier(0.25, 0.1, 0.25, 1);
   --eas-ei: cubic-bezier(0.75, 0.1, 0.75, 1);
+  --eas-ic: cubic-bezier(0.55, 0, 1, 0.45);
 }
 
 html,
@@ -209,9 +212,41 @@ body {
   transform: scaleX(1);
 }
 
+.active [data-a="trig"]:hover:after {
+  transition: transform var(--time-1) var(--eas-eo) 0s;
+  transform: scaleX(0.5);
+}
+
 /* -- Svgs */
 svg {
-  min-width: 10vw;
-  min-height: 10vh;
-  border: 1px solid pink;
+  min-width: 2vw;
+  min-height: 2vh;
+}
+
+.loader-icon {
+  max-height: 2em;
+  fill: none;
+  stroke: white;
+}
+
+.loader-icon path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+}
+
+.active .loader-icon path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset var(--time-2) var(--eas-ic) 0s;
+}
+
+/* -- Preloader */
+
+[data-loader="line"] {
+  transform: scaleX(0);
+  transition: transform var(--time-1) var(--eas-eo) 0s;
+}
+
+.active [data-loader="line"] {
+  transform: scaleX(0.1);
+  transition: transform var(--time-1) var(--eas-eo) 0s;
 }
