@@ -29,6 +29,8 @@ export default class extends Transform {
       (item, i) => new Model(this.gl, item, window.assets.textures[i])
     );
 
+    // console.log(this.models);
+
     // initial setup
     // console.log("setup", window.app.store);
     // console.log(window.app.store.work); // start state
@@ -97,5 +99,9 @@ export default class extends Transform {
     /* TRIGGERS
     - dom
     */
+  }
+
+  lightsOn(val) {
+    this.models[window.app.store.slider.current].program.on = val ? 1 : 0;
   }
 }

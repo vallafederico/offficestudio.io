@@ -1,0 +1,17 @@
+---
+const { title, type, imageUrl, canonicalUrl, description } = Astro.props;
+---
+
+<!-- page -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<!-- basic -->
+<meta name="description" content={description} />
+<meta name="keywords" content="Contemporary Design Studio" />
+<!-- <meta name="author" content="John Doe" /> -->
+<!-- ogs -->
+<meta property="og:title" content={title} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:description" content={description} />

@@ -3,22 +3,25 @@ import "../style/type.css";
 import "../style/main.css";
 
 const { title, frontmatter } = Astro.props;
-const { size, name, year } = frontmatter;
+const { size, name, year, metadesc, price } = frontmatter;
+
+let printPrice = price ? price + " $" : "Price Upon Request";
 
 // console.log(Astro.props, size);
 import Canvas from "../components/Canvas.astro";
 import Nav from "../components/Nav.astro";
 import Preloader from "../components/Preloader.astro";
+
+import Meta from "src/components/Meta.astro";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <!-- <meta name="generator" content={Astro.generator} /> -->
+    <Meta title={name} description={metadesc} />
+    <title>OFFFICE :: {name}</title>
   </head>
 
   <body>
@@ -45,8 +48,16 @@ import Preloader from "../components/Preloader.astro";
         </div>
         <!-- II -->
         <div class="c justify-between hidden md:flex">
-          <a data-a-dom="underline" data-a="line" href="/">BACK HOME</a>
-          <p data-a-dom="underline" data-a="line">DOWNLOAD SPEC SHEET</p>
+          <a
+            data-a-dom="underline"
+            data-a-gl="light"
+            data-a="line"
+            href="/"
+            class="py-4">BACK HOME</a
+          >
+          <p class="py-4" data-a-dom="underline" data-a="line">
+            DOWNLOAD SPEC SHEET
+          </p>
         </div>
         <!-- III -->
         <div class="c md:flex justify-between items-end">
@@ -60,13 +71,17 @@ import Preloader from "../components/Preloader.astro";
               {name}
             </h1>
           </div>
-          <p
-            data-a-dom="underline"
-            class="pt-8 md:pt-0 text-right"
-            data-a="line"
-          >
-            REQUEST PURCHASE
-          </p>
+
+          <div>
+            <p data-a="line" class="mb-2 text-end font-gs">{printPrice}</p>
+            <p
+              data-a-dom="underline"
+              class="pt-8 md:pt-0 text-right font-bold cursor-pointer"
+              data-a="line"
+            >
+              REQUEST PURCHASE
+            </p>
+          </div>
         </div>
       </main>
     </div>

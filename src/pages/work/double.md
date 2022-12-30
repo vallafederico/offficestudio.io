@@ -17,6 +17,9 @@ size: ["W 087", "H 110", "D 075"]
 # webgl
 modelurl: "3d/double-chair.glb"
 textureurl: "3d/double-chair-diff.png"
+
+# Meta
+metadesc: "Some Description"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

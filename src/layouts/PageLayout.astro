@@ -2,21 +2,22 @@
 import "../style/type.css";
 import "../style/main.css";
 
-const { title } = Astro.props;
+const { title, metadesc } = Astro.props;
 
 import Nav from "../components/Nav.astro";
 import Canvas from "../components/Canvas.astro";
 import Preloader from "../components/Preloader.astro";
+
+import Meta from "src/components/Meta.astro";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <!-- <meta name="generator" content={Astro.generator} /> -->
+    <Meta title={title} description={metadesc} />
+    <title>OFFFICE :: {title}</title>
   </head>
 
   <body>

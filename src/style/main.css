@@ -176,7 +176,13 @@ body {
   transition: opacity var(--time-1) var(--eas-eo) 0s;
 }
 
-[data-dom="list"] .active {
+[data-dom="list"] li:hover {
+  opacity: 0.4;
+  transition: opacity var(--time-1) var(--eas-eo) 0s;
+}
+
+[data-dom="list"] .active,
+[data-dom="list"] .active:hover {
   transition: opacity var(--time-1) var(--eas-eo) 0s;
   opacity: 1;
   z-index: 20;

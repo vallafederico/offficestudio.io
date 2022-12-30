@@ -3,12 +3,16 @@ import NameSvg from "/svg/name-textsvg.svg";
 ---
 
 <figure
-  class="preloader fixed w-screen h-screen flex items-center justify-center bg-black z-50"
+  class="preloader fixed w-[100vw] h-[100vh] top-0 flex items-center justify-center bg-black z-50"
   data-loader="wrapper"
 >
-  <div class="w-[30vw] flex flex-col items-center">
+  <div class="lg:w-[30vw] w-2/3 flex flex-col items-center">
     <!-- Name -->
-    <img src={NameSvg} alt="Office For Future Furnishing" class="w-1/2 mb-12" />
+    <img
+      src={NameSvg}
+      alt="Office For Future Furnishing"
+      class="lg:w-1/2 w-2/3 mb-12"
+    />
     <!-- line -->
     <div class="w-full bg-[#5a5a5a] h-[1px] flex">
       <div data-loader="line" class="bg-white w-full origin-left">

@@ -9,6 +9,7 @@ year: 2022
 type: Armchair
 category: Interior
 avail: US / WW
+price: 1920,00
 
 # W / H / L
 size: ["W 087", "H 110", "D 075"]
@@ -17,6 +18,9 @@ size: ["W 087", "H 110", "D 075"]
 # webgl
 modelurl: "3d/hole-chair.glb"
 textureurl: "3d/hole-chair-diff.png"
+
+# Meta
+metadesc: "Some Description"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

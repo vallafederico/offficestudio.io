@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/PageLayout.astro";
-// import Section from "../components/Section.astro";
-// import Hero from "../components/home/Hero.astro";
-// import List from "../components/home/List.astro";
-// import About from "../components/home/About.astro";
-// import Footer from "../components/home/Footer.astro";
-// import Nav from "../components/Nav.astro";
+
+import FullList from "src/components/work/FullList.astro";
+import About from "src/components/home/About.astro";
+import Footer from "src/components/home/Footer.astro";
 ---
 
-<Layout title="Home">hi</Layout>;
+<Layout title="OFFFICE ‖ Works">
+  <FullList />
+  <About />
+  <Footer />
+</Layout>;

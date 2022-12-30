@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/WorkLayout.astro
-name: Light Fixture \#I
+name: Light Fixture I
 
 date: 2022-05-01
 featured: true
@@ -17,6 +17,9 @@ size: ["W 087", "H 110", "D 075"]
 # webgl
 modelurl: "3d/sample-lamp.glb"
 textureurl: "3d/sample-lamp-diff.png"
+
+# Meta
+metadesc: "Some Description"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

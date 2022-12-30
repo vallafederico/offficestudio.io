@@ -10,6 +10,7 @@ uniform mat4 projectionMatrix;
 uniform mat3 normalMatrix;
 
 uniform float u_time;
+varying float v_time;
 
 varying vec3 v_normal;
 varying vec3 v_view;
@@ -26,4 +27,5 @@ void main() {
   v_view = normalize(- gl_Position.xyz);
 
   v_uv = uv;
+  v_time = u_time;
 }

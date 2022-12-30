@@ -24,12 +24,22 @@ export default class {
 
     const listWrapper = document.querySelector('[data-dom="list"]');
     if (listWrapper) this.list = new List({ element: listWrapper });
+
+    window.app.gl.scene.lightsOn(0, true);
+    this.lightSwitch = document.querySelector('[data-a-gl="light"]');
+    if (this.lightSwitch) {
+      this.lightSwitch.onmouseenter = () => window.app.gl.scene.lightsOn(1);
+      this.lightSwitch.onmouseleave = () => window.app.gl.scene.lightsOn(0);
+    }
   }
 
   destroyAnimation() {
     this.text?.forEach((char) => char.animateOut());
     this.alpha?.forEach((el) => el.animateOut());
     this.list?.destroy();
+    if (this.lightSwitch) {
+      this.lightSwitch.onmouseenter = this.lightSwitch.onmouseleave = null;
+    }
   }
 
   /* --  Pages */
@@ -66,9 +76,9 @@ export default class {
 
     if (to[0] === "work") {
       // trantisioning to work group
-      if (to[1].length > 1) {
+      if (to[1] && to[1].length > 1) {
         // transitioning to work item
-        console.log("T> item");
+        // console.log("T> item");
         // > spinner can NOT spin
         window.app.gl.scene.spinner.animateSpin(0, 3);
         window.app.gl.scene.toTextured(1, { d: 1.2, del: 0.2 });
