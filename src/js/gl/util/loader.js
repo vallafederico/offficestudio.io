@@ -75,7 +75,8 @@ export class Loader {
     if (perc === 100) {
       if (!this.wrapper) return;
       gsap.to(this.wrapper, {
-        duration: 0.3,
+        duration: 0.6,
+        delay: 0.2,
         autoAlpha: 0,
         onComplete: () => {
           this.wrapper.remove();
