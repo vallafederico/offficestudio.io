@@ -62,18 +62,18 @@ export default class extends Transform {
   }
 
   /* ----- Slider */
-  slide(index, instant = false) {
+  slide(index, instant = false, d = 1) {
     if (index === this.currentIndex) return Promise.resolve();
     this.currentIndex = index;
 
     this.txts.next = this.models[index]; // set next
     this.txts.next.isActive = true;
 
-    let d = 1;
+    // let d = 1;
     if (instant) d = 0;
 
     return new Promise((resolve) => {
-      gsap.to(this.txts, {
+      this.a_slide = gsap.to(this.txts, {
         val: 1,
         ease: "power2",
         duration: d,

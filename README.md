@@ -41,4 +41,3 @@
 - [x] back button kills the app (in `pages.js`)
 - [x] promisify loading
 - [ ] svg classes
-- [ ] fix work page not matching model correctly

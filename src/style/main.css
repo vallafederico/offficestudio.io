@@ -47,13 +47,12 @@ body {
 }
 
 body {
-  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: move;
   cursor: grab;
   cursor: -moz-grab;
   cursor: -webkit-grab;
 }
 
-/* (Optional) Apply a "closed-hand" cursor during drag operation. */
 body:active {
   cursor: grabbing;
   cursor: -moz-grabbing;
@@ -111,6 +110,7 @@ main {
 body::-webkit-scrollbar {
   display: none;
 }
+
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -119,7 +119,7 @@ body {
 /* ------------------------------  Animations */
 
 /* -- Hover */
-[data-a-dom="underline"] {
+/* [data-a-dom="underline"] {
   position: relative;
 }
 
@@ -140,6 +140,17 @@ body {
 [data-a-dom="underline"]:hover:after {
   transition: transform var(--time-0) var(--eas-eo) 0s;
   transform: scaleX(1);
+} */
+
+[data-a-dom="underline"] {
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity var(--time-0) var(--eas-eo) 0s;
+}
+
+[data-a-dom="underline"]:hover {
+  opacity: 0.5;
+  transition: opacity var(--time-0) var(--eas-eo) 0s;
 }
 
 /* -- Text */

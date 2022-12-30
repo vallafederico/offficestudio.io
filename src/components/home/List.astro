@@ -5,12 +5,14 @@ import { getPages } from "../content.js";
 const items = await getPages();
 ---
 
-<Section className="mb-[50vh]">
+<Section className="mb-[20vh]">
   <div class="c">
     <div class="flex justify-center mb-4">
-      <a href="/work">
-        <h2 data-a="char" class="font-bold italic text-lg">Archive</h2>
-      </a>
+      <div>
+        <h2 data-a="word" data-layer="top" class="font-bold italic text-lg">
+          Archive
+        </h2>
+      </div>
     </div>
     <ul data-dom="list">
       <!--  -->
@@ -26,7 +28,7 @@ const items = await getPages();
               <div class="flex justify-center">
                 <h2
                   data-a="alpha"
-                  class="font-gs md:text-[5vw] text-[10vw] leading-[.9em] text-center max-w-[80vw]"
+                  class="font-gs md:text-[6vw] text-[10vw] leading-[.9em] text-center max-w-[80vw]"
                 >
                   <span> {name}</span>
                   <span class="font-ak text-xl">{year}</span>

@@ -15,6 +15,7 @@ export class List {
       li: [...this.element.children],
       trig: [...this.element.children].map((el) => {
         const item = el.querySelector('[data-a="trig"]');
+        if (!item) return;
         const tx = new Text({ element: item });
         tx.stop();
         tx.setOut();
@@ -40,22 +41,22 @@ export class List {
 
     // dom
     this.items.li[this.items.prev].classList.remove("active");
-    this.items.trig[this.items.prev].animateOut();
+    this.items?.trig[this.items.prev]?.animateOut();
     this.items.li[index].classList.add("active");
-    this.items.trig[index].animateIn();
+    this.items?.trig[index]?.animateIn();
     this.items.prev = index;
 
     // wait gl transition then reset
     // if (index === this.items.current) return;
     // this.items.current = index;
 
-    await window.app?.gl.scene.slide(index);
+    await window.app?.gl.scene.slide(index, false);
     this.canSlide = true;
   }
 
   destroy() {
-    this.items.li.forEach((el) => (el.onclick = null));
-    this.items.trig.forEach((el) => el.animateOut());
+    this.items.li.forEach((el) => (el.onclick = el.onmouseenter = null));
+    this.items?.trig?.forEach((el) => el?.animateOut());
   }
 }
 
