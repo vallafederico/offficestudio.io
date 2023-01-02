@@ -1,11 +1,9 @@
 export async function getPages() {
-  const pages = import.meta.glob("../pages/work/*.md");
-  const pageArray = [];
+  const modules = import.meta.glob("../pages/work/*.md");
 
-  for (const path in pages) {
-    // console.log(pages[path]);
-    const page = await pages[path]();
-    pageArray.push(page);
+  const pageArray = [];
+  for (const path in modules) {
+    pageArray.push(await modules[path]());
   }
 
   // sort by date
@@ -32,4 +30,10 @@ export async function getGlPages() {
       textureurl,
     };
   });
+}
+
+// webgl Assets
+export async function pagesToString() {
+  const array = await getGlPages();
+  return array;
 }

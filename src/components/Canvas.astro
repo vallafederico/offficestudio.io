@@ -1,7 +1,12 @@
 ---
+import { pagesToString } from "./content.js";
+const arr = await pagesToString();
+
+const toJson = JSON.stringify(arr);
+// console.log(toJson);
 ---
 
-<div data-gl="c"></div>
+<div data-data={toJson} data-gl="c"></div>
 <script>
   import "../js/app.js";
 </script>

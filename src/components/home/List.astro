@@ -21,14 +21,11 @@ const items = await getPages();
           const { name, type, category, year, avail, modelurl } =
             item.frontmatter;
           return (
-            <li
-              data-model={modelurl}
-              class=" flex flex-col content-center mb-4 cursor-pointer"
-            >
+            <li class=" flex flex-col content-center mb-6 pb-6 cursor-pointer">
               <div class="flex justify-center">
                 <h2
                   data-a="alpha"
-                  class="font-gs md:text-[6vw] text-[10vw] leading-[.9em] text-center max-w-[80vw]"
+                  class="font-gs md:text-[5vw] text-[10vw] leading-[.9em] text-center max-w-[80vw]"
                 >
                   <span> {name}</span>
                   <span class="font-ak text-xl">{year}</span>

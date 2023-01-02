@@ -1,12 +1,12 @@
 import gsap from "gsap";
 import { loadTexture } from "./texture-loader";
 import { loadModel } from "./model-loader";
-import { getGlPages } from "../../../components/content";
 import { ASSETS } from "../../assets";
 
 export class Loader {
   constructor(gl) {
     this.gl = gl;
+    this.content = document.querySelector("[data-data]").dataset.data;
     this.wrapper = document.querySelector('[data-loader="wrapper"]');
     this.line = document.querySelector('[data-loader="line"]');
 
@@ -15,8 +15,8 @@ export class Loader {
   }
 
   async load() {
-    const cont = await getGlPages();
-    this.computeInitialStore(cont);
+    const cont = JSON.parse(this.content);
+    setTimeout(() => this.computeInitialStore(cont), 1); // bad fix, rewrite pls
 
     this.full = cont.length * 2 + 1 - 1;
     this.count = 0;

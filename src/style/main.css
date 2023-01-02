@@ -172,15 +172,6 @@ body {
   will-change: transform;
 }
 
-/* [data-a="word"] i {
-  padding-right: 0.3em;
-}
-
-[data-a="word"] b {
-  padding-right: 0.3em;
-  padding-left: 0.3em;
-} */
-
 /* -- List */
 [data-dom="list"] li {
   opacity: 0.1;

@@ -9,7 +9,7 @@ year: 2022
 type: Armchair
 category: Interior
 avail: US / WW
-price: 1920,00
+# price: 1920,00
 
 # W / H / L
 size: ["W 087", "H 110", "D 075"]
