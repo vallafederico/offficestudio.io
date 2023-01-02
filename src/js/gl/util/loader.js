@@ -83,8 +83,6 @@ export class Loader {
         },
       });
     }
-
-    // console.log("loaded", this.count, perc);
   }
 
   computeInitialStore(cont) {

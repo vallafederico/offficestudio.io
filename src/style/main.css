@@ -39,6 +39,11 @@ h4 {
   -ms-user-select: text;
 }
 
+html,
+body {
+  overscroll-behavior: none;
+}
+
 body {
   background: var(--color-black);
   color: var(--color-white);
