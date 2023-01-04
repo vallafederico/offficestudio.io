@@ -25,7 +25,7 @@ export class Spinner {
       wh: window.innerHeight,
     };
 
-    this.coeff = 0.0005;
+    this.coeff = window.isMobile ? 0.0015 : 0.0005;
 
     // set initial
     if (window.app.store.work) this.animateSpin(0, 0, 0);
