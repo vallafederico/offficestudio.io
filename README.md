@@ -41,3 +41,4 @@
 - [x] back button kills the app (in `pages.js`)
 - [x] promisify loading
 - [ ] svg classes
+- [ ] aternative animation for top text
