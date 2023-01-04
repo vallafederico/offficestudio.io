@@ -24,6 +24,7 @@
 - [ ] custom preloader for each page?
 - [ ] split loading ops for only what's necessary / page based
 - [ ] (GL) more animations
+- [ ] add top view toggle in product page (might be cool)
 
 ### Pre Launch
 
@@ -41,3 +42,8 @@
 - [x] back button kills the app (in `pages.js`)
 - [x] promisify loading
 - [ ] aternative animation for top text
+
+#### Mobile Bugs
+
+- [ ] letterrs flash when page is transitioning (body needs to start visibility hidden)
+- [ ] hero text in home has no animation

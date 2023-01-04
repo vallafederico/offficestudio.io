@@ -29,11 +29,7 @@ export default class extends Transform {
       (item, i) => new Model(this.gl, item, window.assets.textures[i])
     );
 
-    // console.log(this.models);
-
     // initial setup
-    // console.log("setup", window.app.store);
-    // console.log(window.app.store.work); // start state
     this.txts.current = this.models[window.app.store.slider.current];
     this.models[window.app.store.slider.current].isActive = true;
     if (window.app.store.work) this.toTextured(1, { d: 0 });
@@ -43,14 +39,10 @@ export default class extends Transform {
     if (!this.isOn) return;
     this.spinner.render();
 
-    // console.log(this.spinner.mouse.mx);
-
     this.models?.forEach((item) =>
       item.render(t, this.spinner.spin, this.spinner.mouse)
     );
 
-    // this.post.quad.program.mvel =
-    //   (this.spinner.mouse.mx + this.spinner.mouse.my) * 0.2;
     this.post?.render(t, this.txts);
   }
 

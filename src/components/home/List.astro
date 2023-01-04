@@ -20,14 +20,14 @@ const items = await getPages();
         items.map((item) => {
           const { name, type, category, year, avail } = item.frontmatter;
           return (
-            <li class=" flex flex-col content-center mb-6 pb-6 cursor-pointer">
+            <li class=" flex flex-col content-center mb-2 pb-2 cursor-pointer">
               <div class="flex justify-center">
                 <h2
                   data-a="alpha"
                   class="font-gs md:text-[5vw] text-[10vw] leading-[.9em] text-center max-w-[80vw]"
                 >
                   <span> {name}</span>
-                  <span class="font-ak text-xl">{year}</span>
+                  <span class="hidden md:inline font-ak text-xl">{year}</span>
                 </h2>
               </div>
               <div data-a="alpha" class="flex justify-center mt-4 mb-8">

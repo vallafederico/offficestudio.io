@@ -15,9 +15,9 @@ export class Alpha extends Observe {
     });
 
     this.anim = {
-      d: 1.2,
+      d: window.isMobile ? 0.87 : 1.2,
       ease: "expo.out",
-      delay: 0.1,
+      delay: window.isMobile ? 0.05 : 0.1,
       each: 0.05,
       from: "start",
       once: false,
