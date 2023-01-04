@@ -42,6 +42,7 @@
 - [x] back button kills the app (in `pages.js`)
 - [x] promisify loading
 - [ ] aternative animation for top text
+- [ ] images to .webp
 
 #### Mobile Bugs
 
