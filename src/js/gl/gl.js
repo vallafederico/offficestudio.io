@@ -12,12 +12,7 @@ export default class {
 
     this.renderer = new Renderer({ dpr: 2, alpha: true });
     this.gl = this.renderer.gl;
-    this.gl.clearColor(
-      0.06666666666666667,
-      0.06666666666666667,
-      0.06666666666666667,
-      0
-    );
+    this.gl.clearColor(0, 0, 0, 0);
 
     this.wrapper.appendChild(this.gl.canvas);
 
