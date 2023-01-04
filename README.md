@@ -30,7 +30,7 @@
 - [x] favicon
 - [ ] OG metas
 - [ ] dynamic metas
-- [ ] check links
+- [ ] check links and add mailTO
 - [ ] policies - cookie & privacy
 - [ ] all textures to .webp
 - [ ] 404
@@ -40,5 +40,4 @@
 - [x] kill can spin animation if re-triggered otherwise fast clicks kill it
 - [x] back button kills the app (in `pages.js`)
 - [x] promisify loading
-- [ ] svg classes
 - [ ] aternative animation for top text

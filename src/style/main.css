@@ -159,6 +159,13 @@ body {
 }
 
 /* -- List */
+@media only screen and (max-width: 768px) {
+  [data-dom="list"] li {
+    position: relative;
+    z-index: 20;
+  }
+}
+
 [data-dom="list"] li {
   opacity: 0.1;
   transition: opacity var(--time-1) var(--eas-eo) 0s;

@@ -2,12 +2,10 @@
 import "../style/type.css";
 import "../style/main.css";
 
-const { title, frontmatter } = Astro.props;
+const { frontmatter } = Astro.props;
 const { size, name, year, metadesc, price } = frontmatter;
 
 let printPrice = price ? price + " $" : "Price Upon Request";
-
-// console.log(Astro.props, size);
 import Canvas from "../components/Canvas.astro";
 import Nav from "../components/Nav.astro";
 import Preloader from "../components/Preloader.astro";
@@ -33,7 +31,7 @@ import Meta from "src/components/Meta.astro";
       <main
         data-layer="top"
         data-taxi-view
-        class="Main flex h-[100svh] flex-col justify-between md:pt-8 pt-[15vh] pb-8 text-xs mt-0"
+        class="Main fixed flex h-[100svh] flex-col justify-between md:pt-8 pt-[15vh] pb-8 text-xs mt-0"
       >
         <!-- I -->
         <div class="c flex">
@@ -73,7 +71,9 @@ import Meta from "src/components/Meta.astro";
           </div>
 
           <div>
-            <p data-a="line" class="mb-2 text-end font-gs">{printPrice}</p>
+            <p data-a="line" class="hidden md:block mb-2 text-end font-gs">
+              {printPrice}
+            </p>
             <p
               data-a-dom="underline"
               class="pt-8 md:pt-0 text-right font-bold cursor-pointer"

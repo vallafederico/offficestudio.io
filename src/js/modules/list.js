@@ -5,7 +5,6 @@ export class List {
     this.element = element;
 
     if (this.element) this.create();
-    // will need to save and store the values before page transition to get back there and not re-trigger the transition
   }
 
   create() {
@@ -46,10 +45,6 @@ export class List {
     this.items?.trig[index]?.animateIn();
     this.items.prev = index;
 
-    // wait gl transition then reset
-    // if (index === this.items.current) return;
-    // this.items.current = index;
-
     await window.app?.gl.scene.slide(index, false);
     this.canSlide = true;
   }
@@ -59,9 +54,3 @@ export class List {
     this.items?.trig?.forEach((el) => el?.animateOut());
   }
 }
-
-// class Item {
-//   constructor({ element }) {
-//     this.element = element;
-//   }
-// }

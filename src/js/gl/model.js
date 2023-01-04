@@ -11,7 +11,8 @@ export class Model extends Transform {
     this.mesh = scene[0].children[0];
     this.mesh.program = this.program;
 
-    this.mesh.scale.set(0.5, 0.5, 0.5);
+    const sc = window.isMobile ? 0.3 : 0.5;
+    this.mesh.scale.set(sc, sc, sc);
 
     this.rt = new RenderTarget(this.gl, {});
     this.mesh.setParent(this);
@@ -31,8 +32,6 @@ export class Model extends Transform {
 
     this.mesh.rotation.x = y;
     this.mesh.rotation.y = x;
-
-    // this.mesh.rotation.z = mx * 0.2;
 
     window.app.gl.renderer.render({
       scene: this,

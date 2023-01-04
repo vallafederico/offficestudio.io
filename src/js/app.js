@@ -3,6 +3,9 @@ import Viewport from "./modules/viewport";
 import Scroll from "./modules/scroll";
 import Pages from "./modules/pages";
 import Gl from "./gl/gl.js";
+import { isTablet } from "./util/agents.js";
+
+window.isMobile = isTablet();
 
 class App {
   constructor() {
@@ -10,8 +13,6 @@ class App {
     this.viewport = new Viewport();
 
     this.time = 0;
-
-    // window.app.store.slider.current
 
     this.store = {
       slider: {
@@ -57,13 +58,17 @@ class App {
   }
 
   render() {
-    // this.time += 0.1;
     this.scroll?.render();
-
     window.requestAnimationFrame(this.render.bind(this));
   }
-
-  /* Events */
 }
 
 window.app = new App();
+
+(() => {
+  console.log(
+    "%c%s",
+    "font-size:10px; color:#fff; background:#000; padding: 10px 10px; margin: 20px 0px;",
+    "cc HTTPS://FEDERIC.OOO 👀"
+  );
+})();
