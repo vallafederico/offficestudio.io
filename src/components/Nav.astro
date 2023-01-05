@@ -2,11 +2,11 @@
 const links = [
   {
     label: "CUSTOM WORK",
-    href: "",
+    // href: "/",
   },
   {
     label: "SHOP ARCHIVE",
-    href: "",
+    // href: "/",
   },
 ];
 ---
@@ -18,15 +18,14 @@ const links = [
     <div class="font-bold">
       {
         links.map((link) => (
-          <a
+          <button
             data-a-dom="underline"
             class="block mb-[var(--space-s)]"
-            href={link.href}
             target="_blank"
             rel="noopener noreferrer"
           >
             {link.label}
-          </a>
+          </button>
         ))
       }
     </div>
