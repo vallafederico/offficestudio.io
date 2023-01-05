@@ -16,11 +16,11 @@ size: ["W 087", "H 110", "D 075"]
 
 # webgl
 modelurl: "3d/sample-lamp.glb"
-textureurl: "3d/sample-lamp-diff.png"
+textureurl: "3d/sample-lamp-diff.webp"
 
 # Meta
 metadesc: "Some Description"
-imageUrl: "util/offficestud.io-og-webp"
+imageUrl: "util/offficestud.io-og.webp"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
