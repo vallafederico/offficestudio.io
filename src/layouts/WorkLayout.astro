@@ -40,13 +40,13 @@ import Meta from "src/components/Meta.astro";
       >
         <!-- I -->
         <div class="c flex">
-          <li class="w-[50vw] pr-[10%] flex flex-col md:items-end">
+          <ul class="w-[50vw] pr-[10%] flex flex-col md:items-end">
             {
               size.map((unit) => {
-                return <ul data-a="line">{unit}</ul>;
+                return <li data-a="line">{unit}</li>;
               })
             }
-          </li>
+          </ul>
           <div class="w-[30ch] uppercase" data-a="alpha"><slot /></div>
         </div>
         <!-- II -->
