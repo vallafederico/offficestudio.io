@@ -1,5 +1,5 @@
 import { Observe } from "../../util/observe";
-import gsap from "gsap";
+import { gsap } from "gsap/gsap-core";
 
 // NEEDS CHECKING!
 

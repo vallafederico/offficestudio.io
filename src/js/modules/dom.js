@@ -1,4 +1,4 @@
-import gsap from "gsap";
+import { gsap } from "gsap/gsap-core";
 import { Text } from "./animation/text";
 import { Alpha } from "./animation/alpha";
 import { List } from "./list";

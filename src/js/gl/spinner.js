@@ -1,5 +1,5 @@
 // import { m4 } from "twgl.js";
-import gsap from "gsap";
+import { gsap } from "gsap/gsap-core";
 import { lerp } from "../util/math.js";
 
 export class Spinner {

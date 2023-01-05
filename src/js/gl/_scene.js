@@ -1,5 +1,5 @@
 import { Transform } from "ogl";
-import gsap from "gsap";
+import { gsap } from "gsap/gsap-core";
 
 import { Post } from "./post/post.js";
 import { Model } from "./model.js";

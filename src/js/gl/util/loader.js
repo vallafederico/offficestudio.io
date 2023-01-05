@@ -1,4 +1,4 @@
-import gsap from "gsap";
+import { gsap } from "gsap/gsap-core";
 import { loadTexture } from "./texture-loader";
 import { loadModel } from "./model-loader";
 import { ASSETS } from "../../assets";

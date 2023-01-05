@@ -1,4 +1,4 @@
-import gsap from "gsap";
+import { gsap } from "gsap/gsap-core";
 import { Program } from "ogl";
 import vertex from "./vertex.vert";
 import fragment from "./fragment.frag";
