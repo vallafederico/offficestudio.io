@@ -251,3 +251,29 @@ svg {
   transform: scaleX(0.1);
   transition: transform var(--time-1) var(--eas-eo) 0s;
 }
+
+/* Policies Page */
+.Policy p {
+  max-width: 60ch;
+  margin: 3em 0;
+}
+
+.Policy h1 {
+  text-transform: uppercase;
+  font-size: 3em;
+}
+
+.Policy h2 {
+  padding-top: 4em;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+.Policy a {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.Policy a:hover {
+  opacity: 0.5;
+  text-transform: uppercase;
+}

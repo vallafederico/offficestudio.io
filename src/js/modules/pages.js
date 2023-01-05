@@ -1,4 +1,5 @@
 import { Core } from "@unseenco/taxi";
+import gsap from "gsap";
 
 export default class extends Core {
   constructor() {
@@ -46,6 +47,8 @@ export default class extends Core {
   }
 
   async transitionIn(page) {
+    gsap.set(page, { autoAlpha: 0 });
+
     await Promise.allSettled([
       window.app.dom.transitionIn(page, this.props),
       // window.app.gl.transitionIn(page),

@@ -31,7 +31,7 @@ export default class extends Program {
 
   set vel(val) {
     // console.log("vel", val);
-    this.uniforms.u_a_vel.value = val * 0.0006;
+    this.uniforms.u_a_vel.value = val * 0.005;
   }
 
   set mvel(val) {

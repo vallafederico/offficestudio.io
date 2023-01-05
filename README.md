@@ -29,22 +29,22 @@
 ### Pre Launch
 
 - [x] favicon
-- [ ] OG metas
-- [ ] dynamic metas
+- [x] OG metas
+- [x] dynamic metas
+- [x] policies - cookie & privacy
+- [x] 404
 - [ ] check links and add mailTO
-- [ ] policies - cookie & privacy
 - [ ] all textures to .webp
-- [ ] 404
 
 #### Todo
 
 - [x] kill can spin animation if re-triggered otherwise fast clicks kill it
 - [x] back button kills the app (in `pages.js`)
 - [x] promisify loading
-- [ ] aternative animation for top text
+- [x] aternative animation for top text
 - [ ] images to .webp
 
 #### Mobile Bugs
 
-- [ ] letterrs flash when page is transitioning (body needs to start visibility hidden)
-- [ ] hero text in home has no animation
+- [ ] letters flash when page is transitioning (body needs to start visibility hidden)
+- [x] hero text in home has no animation

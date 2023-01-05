@@ -19,9 +19,9 @@ export class Text extends Observe {
       d: 1.2,
       ease: "expo.out",
       delay: 0.1,
-      each: 0.05,
+      each: 0.02,
       from: "start",
-      once: false,
+      once: element.dataset.aMod ? true : false,
       ...anim,
     };
 

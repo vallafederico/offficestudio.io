@@ -10,7 +10,7 @@ export class Alpha extends Observe {
       config: {
         root: null,
         margin: "10px",
-        threshold: 0.8,
+        threshold: 0.3,
       },
     });
 

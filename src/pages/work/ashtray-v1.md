@@ -20,6 +20,7 @@ textureurl: "3d/ashtray-v1-diff.png"
 
 # Meta
 metadesc: "Some Description"
+imageUrl: "util/offficestud.io-og-webp"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

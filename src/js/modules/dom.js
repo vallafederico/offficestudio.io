@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import { Text } from "./animation/text";
 import { Alpha } from "./animation/alpha";
 import { List } from "./list";
@@ -57,6 +58,8 @@ export default class {
 
   transitionIn(page, { from, to }) {
     this.createAnimation();
+    gsap.to(page, { autoAlpha: 1, duration: 0.3 });
+
     // console.log("TIN >", to);
 
     if (to[0] === "") {

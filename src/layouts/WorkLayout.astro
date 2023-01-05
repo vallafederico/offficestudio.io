@@ -3,7 +3,7 @@ import "../style/type.css";
 import "../style/main.css";
 
 const { frontmatter } = Astro.props;
-const { size, name, year, metadesc, price } = frontmatter;
+const { size, name, year, metadesc, price, imageUrl, keyworks } = frontmatter;
 
 let printPrice = price ? price + " $" : "Price Upon Request";
 import Canvas from "../components/Canvas.astro";
@@ -18,7 +18,12 @@ import Meta from "src/components/Meta.astro";
   <head>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- <meta name="generator" content={Astro.generator} /> -->
-    <Meta title={name} description={metadesc} />
+    <Meta
+      title={name}
+      description={metadesc}
+      imageUrl={imageUrl}
+      keyworks={keyworks}
+    />
     <title>OFFFICE :: {name}</title>
   </head>
 

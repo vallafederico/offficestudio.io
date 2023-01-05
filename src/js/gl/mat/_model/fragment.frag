@@ -29,7 +29,7 @@ void main() {
 
     // textures
     vec4 mtc = texture2D(u_mtc, fakeUv);
-    mtc.rgb += hlight * .1; // light
+    mtc.rgb += hlight * .15; // light
 
     vec4 diffuse = texture2D(u_diffuse, v_uv).rgba;
     diffuse.rgb -= hlight * .1; // light

@@ -2,7 +2,7 @@
 layout: ../../layouts/WorkLayout.astro
 name: Double Chair
 
-date: 2022-05-02
+date: 2023-05-02
 featured: true
 
 year: 2021
@@ -20,6 +20,7 @@ textureurl: "3d/double-chair-diff.png"
 
 # Meta
 metadesc: "Some Description"
+imageUrl: "util/offficestud.io-og-webp"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

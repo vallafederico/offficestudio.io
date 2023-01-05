@@ -1,5 +1,5 @@
 ---
-const { title, imageUrl, description } = Astro.props;
+const { title, imageUrl, description, keyworks } = Astro.props;
 ---
 
 <!-- page -->
@@ -8,12 +8,12 @@ const { title, imageUrl, description } = Astro.props;
 
 <!-- basic -->
 <meta name="description" content={description} />
-<meta name="keywords" content="Contemporary Design Studio" />
+<meta name="keywords" content={keyworks || "Contemporary Design Studio"} />
 <!-- <meta name="author" content="John Doe" /> -->
 
 <!-- ogs -->
 <meta property="og:title" content={title} />
-<meta property="og:image" content={imageUrl} />
+<meta property="og:image" content={imageUrl || "util/offficestud.io-og.webp"} />
 <meta property="og:description" content={description} />
 <!-- <meta property="og:type" content={type} /> -->
 <!-- <meta property="og:url" content={canonicalUrl} /> -->
