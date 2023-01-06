@@ -62,6 +62,7 @@ export default class {
 
     // console.log("TIN >", to);
 
+    // ALl PAGE cluster
     if (to[0] === "") {
       // transitioning to home
 
@@ -75,16 +76,27 @@ export default class {
       // > spinner can spin
       window.app.gl.scene.spinner.animateSpin(1, 0.2);
       window.app.gl.scene.toTextured(0, { d: 1.2, del: 0 });
+      window.app.gl.scene.toDistort(0); //reset distortion
+    } else if (to[0] === "contact") {
+      // transitioning to contact
+      window.app.scroll.scrollZero();
+      window.app.gl.scene.toTextured(0, { d: 1.2, del: 0 }); // reset if textured
+      window.app.gl.scene.toDistort(1); // distort for contact page
+    } else {
+      // reset scroll for all pages
+      window.app.scroll.scrollZero();
     }
 
+    // WORK cluster
     if (to[0] === "work") {
-      // trantisioning to work group
+      // trantisioning to work item
       if (to[1] && to[1].length > 1) {
         // transitioning to work item
         // console.log("T> item");
         // > spinner can NOT spin
         window.app.gl.scene.spinner.animateSpin(0, 3);
         window.app.gl.scene.toTextured(1, { d: 1.2, del: 0.2 });
+        window.app.gl.scene.toDistort(0); // reset distortion
       } else {
         // transitioning to work archive page
         console.log("T> work archive");

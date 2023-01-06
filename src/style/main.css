@@ -277,3 +277,27 @@ svg {
   opacity: 0.5;
   text-transform: uppercase;
 }
+
+/* Form */
+input,
+textarea {
+  all: unset;
+}
+
+.Form input::placeholder,
+.Form textarea::placeholder {
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+
+.Form textarea {
+  /* border: 1px solid blue; */
+  width: 100%;
+  /* flex-shrink: 1; */
+}
+
+.Form input:focus,
+.Form textarea:focus {
+  box-sizing: border-box;
+  border-bottom: 1px solid darkgrey;
+}

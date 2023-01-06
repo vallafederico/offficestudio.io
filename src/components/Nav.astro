@@ -1,13 +1,16 @@
 ---
+// const { pageName } = Astro.props;
+// console.log(pageName);
+
 const links = [
   {
-    label: "CUSTOM WORK",
-    // href: "/",
+    label: "GET IN TOUCH",
+    href: "/contact",
   },
-  {
-    label: "SHOP ARCHIVE",
-    // href: "/",
-  },
+  // {
+  //   label: "SHOP ARCHIVE",
+  //   // href: "/",
+  // },
 ];
 ---
 
@@ -18,14 +21,13 @@ const links = [
     <div class="font-bold">
       {
         links.map((link) => (
-          <button
+          <a
             data-a-dom="underline"
             class="block mb-[var(--space-s)]"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={link.href}
           >
             {link.label}
-          </button>
+          </a>
         ))
       }
     </div>

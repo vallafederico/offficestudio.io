@@ -25,6 +25,7 @@
 - [ ] split loading ops for only what's necessary / page based
 - [ ] (GL) more animations
 - [ ] add top view toggle in product page (might be cool)
+- [ ] ecommerce layer
 
 ### Pre Launch
 

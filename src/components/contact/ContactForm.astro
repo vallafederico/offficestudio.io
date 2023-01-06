@@ -1,0 +1,80 @@
+---
+import Section from "../Section.astro";
+---
+
+<Section className="Form">
+  <div
+    class="c md:flex content-center justify-center items-center min-h-screen my-[10vh] md:my-0"
+  >
+    <div class="md:w-1/4 w-1/2">
+      <h1
+        class="font-gs md:text-[5vw] text-[10vw] text-right md:text-left leading-[1em]"
+      >
+        <span data-a="char">GET IN</span>
+        <br />
+        <span data-a="char">TOUCH</span>
+      </h1>
+    </div>
+    <form
+      class="md:w-3/4 w-full text-[.9em]"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-layer="top"
+    >
+      <!-- Form Intro Text -->
+      <div class="py-16 flex items-start">
+        <p data-a="word" class="w-1/3 px-4 text-right">
+          <b> GENERAL ENQUIRIES</b>
+          <br />CONTACT FORM
+        </p>
+      </div>
+      <!-- Form Fields -->
+      <div class="py-4 flex items-start">
+        <label data-a="word" for="name" class="w-1/3 px-2 text-right"
+          >NAME</label
+        >
+        <input
+          data-a="alpha"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          class="w-1/2 px-2"
+        />
+      </div>
+      <div class="py-4 flex items-start">
+        <label data-a="word" for="email" class="w-1/3 px-2 text-right font-bold"
+          >EMAIL</label
+        >
+        <input
+          data-a="alpha"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          class="w-1/2 px-2"
+        />
+      </div>
+
+      <!-- Form TextArea -->
+      <div class="py-4 flex items-start">
+        <label data-a="word" for="ID" class="w-1/2 px-4 text-right font-bold"
+          >YOUR <br />MESSAGE</label
+        >
+        <textarea
+          id="ID"
+          name="ID"
+          placeholder="Write your message here"
+          data-a="alpha"
+          class="px-0 h-[20vh]"></textarea>
+      </div>
+      <!-- Form Intro Text -->
+      <div class="py-16 flex items-start" data-a="alpha">
+        <button
+          data-a-dom="underline"
+          type="submit"
+          class="w-1/3 px-4 py-4 text-right font-bold">SEND EMAIL</button
+        >
+      </div>
+    </form>
+  </div>
+</Section>

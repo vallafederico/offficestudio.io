@@ -1,4 +1,4 @@
-import { Program, Texture } from "ogl";
+import { Program } from "ogl";
 import vertex from "./vertex.vert";
 import fragment from "./fragment.frag";
 
@@ -15,10 +15,11 @@ export default class extends Program {
 
     this.uniforms = {
       u_time: { value: 0 },
-      // RTs
+      // animation
       u_a_trans: { value: 0 },
       u_a_vel: { value: 0 },
       u_a_mv: { value: 0 },
+      u_a_distort: { value: 0 },
       // RTs
       u_current: { value: null },
       u_next: { value: null },
@@ -48,5 +49,9 @@ export default class extends Program {
 
   set transition(val) {
     this.uniforms.u_a_trans.value = val;
+  }
+
+  set distort(val) {
+    this.uniforms.u_a_distort.value = val;
   }
 }

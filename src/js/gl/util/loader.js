@@ -88,6 +88,7 @@ export class Loader {
   computeInitialStore(cont) {
     // clean pathname
     let { pathname } = window.location;
+
     if (
       pathname.length > 1 &&
       pathname.substring(pathname.length - 1) === "/"
@@ -99,11 +100,21 @@ export class Loader {
     const startsAt = cont.findIndex((item) => item.url === pathname);
 
     if (startsAt === -1) {
-      window.app.store.slider.current = 0;
-      window.app.store.work = false;
+      if (pathname === "/contact") {
+        // CONTACT PAGE INIT
+        window.app.store.slider.current = 0;
+        window.app.store.work = false;
+        window.app.store.contact = true;
+      } else {
+        // home or general page
+        window.app.store.slider.current = 0;
+        window.app.store.work = false;
+        window.app.store.contact = false;
+      }
     } else {
       window.app.store.slider.current = startsAt;
       window.app.store.work = true;
+      window.app.store.contact = false;
     }
   }
 }

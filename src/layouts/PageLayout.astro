@@ -2,7 +2,8 @@
 import "../style/type.css";
 import "../style/main.css";
 
-const { title, description, imageUrl } = Astro.props;
+const { pathname } = Astro.url;
+const { title, description, imageUrl, url } = Astro.props;
 
 import Nav from "../components/Nav.astro";
 import Canvas from "../components/Canvas.astro";
@@ -21,7 +22,7 @@ import Meta from "src/components/Meta.astro";
   </head>
 
   <body>
-    <Nav />
+    <Nav pageName={pathname} />
     <Preloader />
 
     <div data-taxi>

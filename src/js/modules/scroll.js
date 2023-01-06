@@ -28,6 +28,10 @@ export default class extends Lenis {
     });
   }
 
+  scrollZero() {
+    setTimeout(() => this.scrollTo(0, { immediate: true }), 5);
+  }
+
   init() {
     this.y = window.scrollY;
     this.max = window.innerHeight;

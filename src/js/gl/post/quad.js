@@ -14,5 +14,6 @@ export default class extends Mesh {
   render(t) {
     this.program.time = t;
     this.program.vel = window.app.scroll.speed || 0;
+    this.program.distort = window.app.store.anim.distort || 0;
   }
 }

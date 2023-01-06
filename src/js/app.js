@@ -21,6 +21,7 @@ class App {
       anim: {
         spin: 1,
         textured: 0,
+        distort: 0,
       },
     };
 

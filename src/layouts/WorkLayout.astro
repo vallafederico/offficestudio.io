@@ -2,15 +2,15 @@
 import "../style/type.css";
 import "../style/main.css";
 
-const { frontmatter } = Astro.props;
-const { size, name, year, metadesc, price, imageUrl, keyworks } = frontmatter;
-
-let printPrice = price ? price + " $" : "Price Upon Request";
 import Canvas from "../components/Canvas.astro";
 import Nav from "../components/Nav.astro";
 import Preloader from "../components/Preloader.astro";
-
 import Meta from "src/components/Meta.astro";
+
+const { frontmatter } = Astro.props;
+const { size, name, year, metadesc, price, imageUrl, keyworks } = frontmatter;
+
+let printPrice = price ? price + " $" : "UNAVAILABLE";
 ---
 
 <!DOCTYPE html>
@@ -36,7 +36,7 @@ import Meta from "src/components/Meta.astro";
       <main
         data-layer="top"
         data-taxi-view
-        class="Main fixed flex h-[100svh] flex-col justify-between md:pt-8 pt-[15vh] pb-8 text-xs mt-0 touch-none"
+        class="Main fixed flex h-[100svh] md:h-[100vh] flex-col justify-between md:pt-8 pt-[15vh] pb-8 text-xs mt-0 touch-none"
       >
         <!-- I -->
         <div class="c flex">
@@ -58,14 +58,18 @@ import Meta from "src/components/Meta.astro";
             href="/"
             class="py-4">BACK HOME</a
           >
-          <p class="py-4" data-a-dom="underline" data-a="line">
+          <p
+            class="py-4 line-through opacity-20"
+            data-a-dom="underline "
+            data-a="line"
+          >
             DOWNLOAD SPEC SHEET
           </p>
         </div>
         <!-- III -->
         <div class="c md:flex justify-between items-end">
           <div>
-            <p>{year}</p>
+            <p data-a="word">{year}</p>
 
             <h1
               data-a="word"
@@ -76,15 +80,15 @@ import Meta from "src/components/Meta.astro";
           </div>
 
           <div>
-            <p data-a="line" class="hidden md:block mb-2 text-end font-gs">
+            <!-- <p data-a="line" class="hidden md:block mb-2 text-end font-gs">
               {printPrice}
-            </p>
+            </p> -->
             <p
-              data-a-dom="underline"
-              class="pt-8 md:pt-0 text-right font-bold cursor-pointer"
+              data-a-dom="underline "
+              class="pt-8 md:pt-0 text-right font-bold cursor-pointer line-through opacity-20"
               data-a="line"
             >
-              REQUEST PURCHASE
+              CURRENTLY UNAVAILABLE
             </p>
           </div>
         </div>

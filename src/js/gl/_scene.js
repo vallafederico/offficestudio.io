@@ -33,6 +33,7 @@ export default class extends Transform {
     this.txts.current = this.models[window.app.store.slider.current];
     this.models[window.app.store.slider.current].isActive = true;
     if (window.app.store.work) this.toTextured(1, { d: 0 });
+    if (window.app.store.contact) this.toDistort(1);
   }
 
   render(t) {
@@ -91,6 +92,16 @@ export default class extends Transform {
     /* TRIGGERS
     - dom
     */
+  }
+
+  toDistort(val = 0) {
+    // console.log("distorting", val);
+    gsap.to(window.app.store.anim, {
+      distort: val,
+      ease: "expo.out",
+      duration: 1.2,
+      delay: 0.2,
+    });
   }
 
   lightsOn(val) {
