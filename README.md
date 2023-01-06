@@ -9,13 +9,10 @@
 - [x] (DOM) page transitions
 - [x] router and page transition options
 - [x] preloader
-
 - [x] (GL) spinner and movements
 - [x] (GL) materials and rendering
-
 - [x] (GL) slider behaviour
 - [x] (GL) page transitions
-
 - [x] (GL) material to material
 
 ### Additional
@@ -43,9 +40,10 @@
 - [x] back button kills the app (in `pages.js`)
 - [x] promisify loading
 - [x] aternative animation for top text
-- [ ] images to .webp
+- [x] images to .webp
+- [ ] swap light for correct model
 
 #### Mobile Bugs
 
-- [ ] letters flash when page is transitioning (body needs to start visibility hidden)
+- [x] letters flash when page is transitioning (body needs to start visibility hidden)
 - [x] hero text in home has no animation
