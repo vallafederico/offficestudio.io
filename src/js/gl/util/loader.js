@@ -89,6 +89,8 @@ export class Loader {
     // clean pathname
     let { pathname } = window.location;
 
+    console.log(pathname);
+
     if (
       pathname.length > 1 &&
       pathname.substring(pathname.length - 1) === "/"
@@ -100,7 +102,7 @@ export class Loader {
     const startsAt = cont.findIndex((item) => item.url === pathname);
 
     if (startsAt === -1) {
-      if (pathname === "/contact") {
+      if (pathname === "/contact" || pathname === "/contact/") {
         // CONTACT PAGE INIT
         window.app.store.slider.current = 0;
         window.app.store.work = false;
