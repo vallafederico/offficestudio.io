@@ -31,8 +31,8 @@
 - [x] dynamic metas
 - [x] policies - cookie & privacy
 - [x] 404
-- [ ] check links and add mailTO
-- [ ] all textures to .webp
+- [x] check links and add mailTO
+- [x] all textures to .webp
 
 #### Todo
 
@@ -41,6 +41,7 @@
 - [x] promisify loading
 - [x] aternative animation for top text
 - [x] images to .webp
+- [ ] swap lipsum description for products
 - [ ] swap light for correct model
 
 #### Mobile Bugs

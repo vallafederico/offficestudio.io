@@ -12,7 +12,7 @@ avail: US / WW
 # price: 1920,00
 
 # W / H / L
-size: ["W 087", "H 110", "D 075"]
+size: ["W 110", "H 110", "D 090"]
 # draft: true
 
 # webgl
@@ -24,6 +24,4 @@ metadesc: "Some Description"
 imageUrl: "util/offficestud.io-og.webp"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+This one came straight out of a Dalle-2 prompt but looked quite funny so we actually made it for our office. It’s also extremely soft.

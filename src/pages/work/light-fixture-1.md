@@ -11,7 +11,7 @@ category: Interior
 avail: US / WW
 
 # W / H / L
-size: ["W 087", "H 110", "D 075"]
+size: ["W 060", "H 150", "D 040"]
 # draft: true
 
 # webgl
@@ -24,5 +24,3 @@ imageUrl: "util/offficestud.io-og.webp"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

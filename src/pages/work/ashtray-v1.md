@@ -11,7 +11,7 @@ category: Interior
 avail: US / WW
 
 # W / H / L
-size: ["W 087", "H 110", "D 075"]
+size: ["W 020", "H 005", "D 020"]
 # draft: true
 
 # webgl
@@ -23,6 +23,4 @@ metadesc: "Some Description"
 imageUrl: "util/offficestud.io-og.webp"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Part of Smoking Objects VOL 1, a collection of high end accessories released in 2022. First of the 4 ashtrays.
