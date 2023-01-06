@@ -89,8 +89,6 @@ export class Loader {
     // clean pathname
     let { pathname } = window.location;
 
-    console.log(pathname);
-
     if (
       pathname.length > 1 &&
       pathname.substring(pathname.length - 1) === "/"
