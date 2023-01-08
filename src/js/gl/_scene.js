@@ -62,7 +62,6 @@ export default class extends Transform {
     this.txts.next = this.models[index]; // set next
     this.txts.next.isActive = true;
 
-    // let d = 1;
     if (instant) d = 0;
 
     return new Promise((resolve) => {
@@ -95,7 +94,6 @@ export default class extends Transform {
   }
 
   toDistort(val = 0) {
-    // console.log("distorting", val);
     gsap.to(window.app.store.anim, {
       distort: val,
       ease: "expo.out",

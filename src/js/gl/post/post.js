@@ -28,7 +28,3 @@ export class Post {
     this.quad.render(t);
   }
 }
-
-/*
-  
-*/

@@ -41,7 +41,7 @@
 - [x] promisify loading
 - [x] aternative animation for top text
 - [x] images to .webp
-- [ ] swap lipsum description for products
+- [x] swap lipsum description for products
 - [ ] swap light for correct model
 
 #### Mobile Bugs

@@ -39,31 +39,17 @@ export default class {
 
   render(scroll = 0) {
     this.time += 0.5;
-    // console.log(this.time);
 
     if (this.scene) this.scene.render(this.time);
 
     window.requestAnimationFrame(this.render.bind(this));
 
     this.renderPost(this.time);
-    // this.renderer.render({
-    //   scene: this.scene,
-    //   camera: this.camera,
-    // });
   }
 
   renderPost(t) {
-    // 1. render scene to rt
-    // this.renderer.render({
-    //   scene: this.scene,
-    //   camera: this.camera,
-    //   target: this.scene.post.rt,
-    // });
-
-    // 2. move time in post
     this.scene.render(t);
 
-    // 3. render post to quad
     this.renderer.render({
       scene: this.scene.post.quad,
       camera: this.camera,
@@ -88,14 +74,12 @@ export default class {
     this.vp.ratio = cw / ch;
     this.vp.viewSize = this.camera.getViewSize(this.vp.ratio);
     this.vp.viewRatio = this.vp.viewSize.w / this.vp.w;
-    // this.vp.scrollx = window.scrollX;
-    // this.vp.scrolly = window.scrollY;
+
     this.renderer.setSize(this.vp.w, this.vp.h);
     this.camera.perspective({
       aspect: this.vp.ratio,
     });
 
     this.scene.resize(this.vp);
-    // this.resizeChild();
   }
 }
