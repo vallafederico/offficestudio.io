@@ -23,4 +23,4 @@ metadesc: "Some Description"
 imageUrl: "util/offficestud.io-og.webp"
 ---
 
-Low profile, straight leaning comfortable chair and pillow combination. Looks bouncy. It actually is.
+Low profile, straight leaning comfortable chair and pillow combination. Looks as bouncy as it actually is.

@@ -23,4 +23,4 @@ metadesc: "Some Description"
 imageUrl: "util/offficestud.io-og.webp"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Desk lamp, scaled to floor lamp size. Full metal. A light linen shade embedde into the metal provides screening from the builb lights.

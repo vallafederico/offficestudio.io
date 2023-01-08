@@ -23,4 +23,4 @@ metadesc: "Some Description"
 imageUrl: "util/offficestud.io-og.webp"
 ---
 
-Armchair queen, multi layered fitting. Wider than an average armchair, easily seats two.
+Armchair queen size, multi layered fitting. Wider than an average armchair, easily seats two.
