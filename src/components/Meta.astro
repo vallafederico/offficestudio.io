@@ -9,11 +9,22 @@ const { title, description, keyworks } = Astro.props;
 <!-- basic -->
 <meta name="description" content={description} />
 <meta name="keywords" content={keyworks || "Contemporary Design Studio"} />
-<!-- <meta name="author" content="John Doe" /> -->
 
-<!-- ogs -->
-<meta property="og:title" content={title} />
-<meta property="og:image" content="/util/offfice-og.png" />
-<meta property="og:description" content={description} />
-<!-- <meta property="og:type" content={type} /> -->
-<!-- <meta property="og:url" content={canonicalUrl} /> -->
+<meta property="og:url" content="https://offficestud.io/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="For Future Furnishing" />
+<meta property="og:description" content="Home Page" />
+<meta
+  property="og:image"
+  content="https://offficestud.io/util/offfice-og.png"
+/>
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain" content="offficestud.io" />
+<meta property="twitter:url" content="https://offficestud.io/" />
+<meta name="twitter:title" content="For Future Furnishing" />
+<meta name="twitter:description" content="Home Page" />
+<meta
+  name="twitter:image"
+  content="https://offficestud.io/util/offfice-og.png"
+/>
