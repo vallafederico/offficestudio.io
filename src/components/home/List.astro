@@ -17,12 +17,13 @@ const items = await getPages();
     <ul data-dom="list">
       <!--  -->
       {
-        items.map((item) => {
+        items.map((item, index) => {
           const { name, type, category, year, avail } = item.frontmatter;
           return (
             <li class=" flex flex-col content-center mb-2 pb-2 cursor-pointer">
               <div class="flex justify-center">
                 <h2
+                  tabindex={index}
                   data-a="alpha"
                   class="font-gs md:text-[5vw] text-[10vw] leading-[.9em] text-center max-w-[80vw]"
                 >
@@ -33,10 +34,15 @@ const items = await getPages();
               <div data-a="alpha" class="flex justify-center mt-4 mb-8">
                 <div class="flex w-[50vw] justify-between">
                   <p class="hidden md:block">{avail}</p>
-                  <a data-a="trig" href={item.url}>
+                  <a
+                    data-a="trig"
+                    tabindex={index}
+                    href={item.url}
+                    title={name}
+                  >
                     PROJECT DETAILS
                   </a>
-                  <p class="hidden md:block">{type}</p>
+                  <h3 class="hidden md:block">{type}</h3>
                   <p>{category}</p>
                 </div>
               </div>

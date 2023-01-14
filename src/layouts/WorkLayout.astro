@@ -50,7 +50,7 @@ let printPrice = price ? price + " $" : "UNAVAILABLE";
           <div class="w-[30ch] uppercase" data-a="alpha"><slot /></div>
         </div>
         <!-- II -->
-        <div class="c justify-between hidden md:flex">
+        <div class="c justify-between md:flex">
           <a
             data-a-dom="underline"
             data-a-gl="light"
@@ -59,7 +59,7 @@ let printPrice = price ? price + " $" : "UNAVAILABLE";
             class="py-4">BACK HOME</a
           >
           <p
-            class="py-4 line-through opacity-20"
+            class="py-4 line-through opacity-20 hidden md:block"
             data-a-dom="underline "
             data-a="line"
           >
