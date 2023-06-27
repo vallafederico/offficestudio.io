@@ -4,16 +4,16 @@ import { easeOutExpo } from "../util/easings.js";
 export default class extends Lenis {
   constructor() {
     super({
-      duration: 1,
-      smooth: true,
+      duration: 1.8,
+      smoothWheel: true,
       easing: easeOutExpo,
-      direction: "vertical",
+      orientation: "vertical",
       smoothTouch: false,
       touchMultiplier: 2,
     });
 
     this.isActive = true;
-    this.timeFactor = 8;
+    // this.timeFactor = 8;
     this.time = 0;
 
     this.init();
@@ -48,10 +48,10 @@ export default class extends Lenis {
 
   resize() {}
 
-  render() {
+  render(t) {
     if (!this.isActive) return;
 
-    this.raf((this.time += this.timeFactor));
+    this.raf(t);
   }
 
   /**

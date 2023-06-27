@@ -58,8 +58,8 @@ class App {
     this.dom?.resize();
   }
 
-  render() {
-    this.scroll?.render();
+  render(t) {
+    this.scroll?.render(t);
     window.requestAnimationFrame(this.render.bind(this));
   }
 }
